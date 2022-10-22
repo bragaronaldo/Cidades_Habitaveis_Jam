@@ -95,8 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515d60e18bbf5084c83cc01b6e67da64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Enemy 1
+  unitName: Mano Brown
   unitLevel: 2
-  damage: 0
-  maxHP: 30
-  currentHP: 30
+  damage: 211
+  maxHP: 500
+  currentHP: 500
