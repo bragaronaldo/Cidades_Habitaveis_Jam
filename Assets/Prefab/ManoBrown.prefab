@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1870336289813952506}
   - component: {fileID: 1870336289813952509}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: ManoBrown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,6 +97,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Mano Brown
   unitLevel: 2
-  damage: 211
+  lowDamage: 0
+  mediumDamage: 0
+  highDamage: 0
+  damage: 120
   maxHP: 500
   currentHP: 500
