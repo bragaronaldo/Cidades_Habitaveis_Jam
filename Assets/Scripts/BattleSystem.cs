@@ -46,7 +46,7 @@ public class BattleSystem : MonoBehaviour
         // GameObject player = Instantiate(playerPrefab, playerArea);
 
         GameObject player = playerPrefab;
-        // player.transform =
+        player.transform.position = playerArea.transform.position;
         // GameObject player = playerArea.transform
         playerUnit = player.GetComponent<Unit>();
         GameObject enemy = Instantiate(enemyPrefab, enemyArea);
