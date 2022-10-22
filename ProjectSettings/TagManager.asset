@@ -13,6 +13,12 @@ TagManager:
   - DialogueText
   - TextAreaOptions
   - PlayerOptions
+  - Enemy
+  - EnemyNameUI
+  - EnemyFill
+  - PlayerFill
+  - RhymingOptions
+  - Rhymes
   layers:
   - Default
   - TransparentFX
