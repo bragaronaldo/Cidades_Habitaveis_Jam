@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float health;
+    private void Start()
+    {
+        DontDestroyOnLoad(this);
+    }
 }
