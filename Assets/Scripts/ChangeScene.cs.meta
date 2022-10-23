@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/ChangeScene.cs.meta
 guid: 2006be7cc30be1f4b9858a24e8393a7a
+========
+guid: 0800bcfd5b605d74793a76b71aadea21
+>>>>>>>> main:Assets/_Scenes/Main/SpaceToStartTheGame/SpaceToStart.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
