@@ -15,7 +15,7 @@ public class ToBattle : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         _player.blockMovement = true;
-        SceneManager.LoadScene("Battle");
+        SceneManager.LoadScene("BattleScene");
 
     }
 }

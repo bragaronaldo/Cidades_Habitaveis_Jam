@@ -25,8 +25,11 @@ public class BattleSystem : MonoBehaviour
     private Text enemyNameInUI;
     private Transform enemyArea;
     Unit enemyUnit;
+
+    private Enemy enemyA;
     private void Start()
     {
+        enemyA = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
         playerPrefab = GameObject.FindWithTag("Player").gameObject;
         enemyPrefab = GameObject.FindWithTag("Enemy").gameObject;
         _playerController = GameObject.FindWithTag("Player").GetComponent<player_controller>();
@@ -56,7 +59,10 @@ public class BattleSystem : MonoBehaviour
   
     IEnumerator SetupBattle()
     {
-        _playerController.spriteRenderer.sprite = _playerController.sprites[0];
+        _playerController.spriteRenderer.sprite = _playerController.sprites[5];
+        _playerController.transform.localScale = new Vector3(0.05f,0.05f,0.05f);
+
+        enemyA.ChangeSprite(0);
         // GameObject player = Instantiate(playerPrefab, playerArea);
         GameObject player = playerPrefab;
         player.transform.position = playerArea.transform.position;
@@ -154,6 +160,10 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         PlayerActionsUI.SetActive(false);
+        _playerController.spriteRenderer.sprite = _playerController.sprites[5];
+        enemyA.ChangeSprite(1);
+
+
         dialogueText.text = enemyUnit.unitName + " vai rimar!";
 
         yield return new WaitForSeconds(1f);
@@ -201,6 +211,10 @@ public class BattleSystem : MonoBehaviour
     }
     void PlayerTurn()
     {
+        _playerController.spriteRenderer.sprite = _playerController.sprites[4];
+        enemyA.ChangeSprite(0);
+
+
         PlayerActionsUI.SetActive(true);
         dialogueText.text = "Escolha uma ação: ";
     }
