@@ -19,6 +19,7 @@ TagManager:
   - PlayerFill
   - RhymingOptions
   - Rhymes
+  - PlayerRhymes
   layers:
   - Default
   - TransparentFX

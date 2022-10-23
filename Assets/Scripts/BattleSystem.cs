@@ -26,6 +26,7 @@ public class BattleSystem : MonoBehaviour
     Unit enemyUnit;
     private void Start()
     {
+
         playerPrefab = GameObject.FindWithTag("Player").gameObject;
         enemyPrefab = GameObject.FindWithTag("Enemy").gameObject;
 
@@ -205,7 +206,6 @@ public class BattleSystem : MonoBehaviour
     public void Rimar()
     {
         currentTurn++;
-        Debug.Log(currentTurn);
         PlayerCombatOptions.SetActive(true);
     }
     public void OnAttackButton(int attackIndex)
