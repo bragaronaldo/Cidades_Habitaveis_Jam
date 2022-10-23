@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+HEAD:Assets/_Scenes/sandbox.meta
 guid: d60d95130afb534489e0c160cfd4f906
+
+guid: 20196c5dcbc62374584e3403807a9303
+main:Assets/_Scenes/Sandbox/EnterTheBattle.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

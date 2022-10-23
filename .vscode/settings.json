@@ -1,9 +1,13 @@
-﻿{
+{
     "files.exclude":
     {
         "**/.DS_Store":true,
+<<<<<<< HEAD
         "**/.git":true,
-        "**/.gitignore":true,
+        "**/.gitignore":false,
+=======
+        "**/.git":true,        
+>>>>>>> 24a7c3446c09df4b5479a366f7c09d3751bf9bec
         "**/.gitmodules":true,
         "**/*.booproj":true,
         "**/*.pidb":true,
@@ -40,7 +44,7 @@
         "**/*.cubemap":true,
         "**/*.flare":true,
         "**/*.mat":true,
-        "**/*.meta":true,
+        "**/*.meta":false,
         "**/*.prefab":true,
         "**/*.unity":true,
         "build/":true,

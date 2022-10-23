@@ -111,6 +111,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Joao
   unitLevel: 0
+  lowDamage: 50
+  mediumDamage: 120
+  highDamage: 180
   damage: 50
   maxHP: 500
   currentHP: 500
