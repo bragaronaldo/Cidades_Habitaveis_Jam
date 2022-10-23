@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Rhymes
+public class RhymeHub
 {
     [TextArea(3, 10)]
-    public object[] rhymes;
+    public string[] critRhymes;
+    public string[] normalRhymes;
+    public string[] badRhymes;
+
 }
