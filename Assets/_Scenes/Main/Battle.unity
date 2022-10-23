@@ -2423,15 +2423,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42ef3b804a625b4db6e9b52f5dd0ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstRhymes:
-  - "N\xE3o tem experi\xEAncia de rua"
-  - "O pior sabor de sacol\xE9"
-  - "Pirulito do CNeg\xE3o"
-  - Habilidades
-  moreRhymes:
-  - Menor cogumelo do mundo
-  - "N\xE3o tem experi\xEAncia de rua"
-  - "Pirulo do CNeg\xE3o"
 --- !u!4 &1402960919
 Transform:
   m_ObjectHideFlags: 0
