@@ -9,7 +9,6 @@ public class player_controller : MonoBehaviour
     public DialogueTrigger trigger;
     Vector2 speed;
     public bool blockMovement = false;
-    public SpriteRenderer spriteRenderer;
     void Start()
     {
         speed = new Vector2(charSpeed, charSpeed);
@@ -28,16 +27,6 @@ public class player_controller : MonoBehaviour
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
 
-        if (inputX > 0)
-        {
-            spriteRenderer.flipX = false;
-        }
-        else if (inputX < 0)
-        {
-            spriteRenderer.flipX = true;
-        }
-
-        Debug.Log(inputX);
         Vector3 movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
 
         movement *= Time.deltaTime;
