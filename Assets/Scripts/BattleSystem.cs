@@ -25,9 +25,6 @@ public class BattleSystem : MonoBehaviour
     private Text enemyNameInUI;
     private Transform enemyArea;
     Unit enemyUnit;
-    public Text[] rhymingOptions;
-    private Rhymes rhymes;
-    private int rhymeIndex = 0;
     private void Start()
     {
         playerPrefab = GameObject.FindWithTag("Player").gameObject;
@@ -52,20 +49,11 @@ public class BattleSystem : MonoBehaviour
         enemyFill = GameObject.FindWithTag("EnemyFill").GetComponent<Image>();
         playerFill = GameObject.FindWithTag("PlayerFill").GetComponent<Image>();
 
-        // rhymes = GameObject.FindWithTag("Rhymes").GetComponent<Rhymes>();
 
         PlayerCombatOptions.SetActive(false);
 
-        // chooseRhymes(currentTurn);
     }
-    // private void chooseRhymes(int mult)
-    // {
-    //     foreach (string rhyme in rhymes.rhymes)
-    //     {
-    //         rhymingOptions[rhymeIndex * mult].text = rhymes.rhymes[rhymeIndex * mult];
-    //         rhymeIndex++;
-    //     };
-    // }
+  
     IEnumerator SetupBattle()
     {
         _playerController.spriteRenderer.sprite = _playerController.sprites[0];
@@ -211,7 +199,6 @@ public class BattleSystem : MonoBehaviour
             playerFill.color = new Color32(0, 0, 0, 255);
         }
     }
-    public FlowchartOptions flowchartOptions;
     void PlayerTurn()
     {
         PlayerActionsUI.SetActive(true);
@@ -219,9 +206,7 @@ public class BattleSystem : MonoBehaviour
     }
     public void Rimar()
     {
-        flowchartOptions.Combat(currentTurn);
         currentTurn++;
-        Debug.Log(currentTurn);
         PlayerCombatOptions.SetActive(true);
     }
     public void OnAttackButton(int attackIndex)

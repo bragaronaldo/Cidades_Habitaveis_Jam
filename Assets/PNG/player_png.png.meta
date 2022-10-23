@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 8a782656d441fe24ab948f12db414f5a
 TextureImporter:
   internalIDToNameTable:
@@ -41,6 +42,11 @@ TextureImporter:
   - first:
       213: 1541414426391432754
     second: player_png_7
+=======
+guid: da0e1724d6f33bd4786505ec75b02051
+TextureImporter:
+  internalIDToNameTable: []
+>>>>>>> aaa9acd5c458ef9d9b01898e62d8d767633199bd
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -80,12 +86,20 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< HEAD
   spriteMode: 2
+=======
+  spriteMode: 1
+>>>>>>> aaa9acd5c458ef9d9b01898e62d8d767633199bd
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
   spritePixelsToUnits: 16
+=======
+  spritePixelsToUnits: 100
+>>>>>>> aaa9acd5c458ef9d9b01898e62d8d767633199bd
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,6 +143,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
+<<<<<<< HEAD
     sprites:
     - serializedVersion: 2
       name: player_png_0
@@ -403,6 +418,9 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+=======
+    sprites: []
+>>>>>>> aaa9acd5c458ef9d9b01898e62d8d767633199bd
     outline: []
     physicsShape: []
     bones: []
