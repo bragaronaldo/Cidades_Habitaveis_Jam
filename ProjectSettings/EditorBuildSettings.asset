@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/Main/SpaceToStartTheGame/SpaceToStartTheGame.unity
     guid: 80763ac9369b1c1498ee47dd9715bd0d
   - enabled: 1
+    path: Assets/_Scenes/Main/Room.unity
+    guid: 8dcf348203e63fe409067f18a3783314
+  - enabled: 1
     path: Assets/_Scenes/Sandbox/EnterTheBattle/EnterTheBattleSandbox.unity
     guid: 874bd5289f5e45647a107febbdb66742
   - enabled: 1
