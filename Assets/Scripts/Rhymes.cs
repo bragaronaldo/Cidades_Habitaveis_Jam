@@ -16,12 +16,20 @@ public class Rhymes : MonoBehaviour
     //     Debug.Log(x);
     // });
     // }
-    public List<RhymesList> rhymesList = new List<RhymesList>();
-    private void Start()
-    {
-        rhymesList.Add(new RhymesList(0, "Não tem experiência de rua"));
-        rhymesList.Add(new RhymesList(1, "Não tem experiência de rua"));
-    }
+    // public List<RhymesList> rhymesList = new List<RhymesList>();
+    // private void Start()
+    // {
+    //     rhymesList.Add(new RhymesList(0, "Não tem experiência de rua"));
+    //     rhymesList.Add(new RhymesList(1, "Não tem experiência de rua"));
+    // }
 
+    // public int index { get; set; }
+    // public string Rima { get; set; }
+    // public class Rima() {}
+    // public class Rima(int rimaIndex, string RimaString)
+    // {
+    //     index = rimaIndex;
+    //     Rima = RimaString;
+    // }
 
 }

@@ -43,7 +43,7 @@ public class FlowchartOptions : MonoBehaviour
         //     rhymingOptions[firstTurnIndex].text = rhymes.firstRhymes[firstTurnIndex];
         //     firstTurnIndex++;
         // }
-        rhymingOptions[rhymes.rhymesList[0].index].text = rhymes.rhymesList[rhymes.rhymesList[0].index].rhymes;
+        // rhymingOptions[rhymes.rhymesList[0].index].text = rhymes.rhymesList[rhymes.rhymesList[0].index].rhymes;
         // Debug.Log(rhymes.rhymesList[0].index);
     }
     private void SecondTurn()

@@ -6,14 +6,17 @@ using UnityEngine.SceneManagement;
 public class ToBattle : MonoBehaviour
 {
     private BoxCollider2D _boxCollider;
+    private player_controller _player;
     private void Start()
     {
         _boxCollider = GetComponent<BoxCollider2D>();
-        // DontDestroyOnLoad(transform.root.gameObject);
+        _player = GameObject.FindWithTag("Player").GetComponent<player_controller>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // DontDestroyOnLoad(this);
+        // _player.blockMovement = true;
         SceneManager.LoadScene("Battle");
+        // _player.spriteRenderer.flipX = false;
+
     }
 }

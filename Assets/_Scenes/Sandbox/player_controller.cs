@@ -8,19 +8,19 @@ public class player_controller : MonoBehaviour
     public GameObject canva;
     public DialogueTrigger trigger;
     Vector2 speed;
-    // Start is called before the first frame update
+    public bool blockMovement = false;
+    public SpriteRenderer spriteRenderer;
     void Start()
     {
-    speed = new Vector2(charSpeed, charSpeed);
-    canva = GameObject.FindGameObjectWithTag("DialogueText").gameObject;
-
-
+        speed = new Vector2(charSpeed, charSpeed);
+        canva = GameObject.FindGameObjectWithTag("DialogueText").gameObject;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        charMovement();
+        if (blockMovement == false)
+        {
+            charMovement();
+        }
     }
 
     public void charMovement()
@@ -28,27 +28,34 @@ public class player_controller : MonoBehaviour
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
 
+        if (inputX > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (inputX < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+
+        Debug.Log(inputX);
         Vector3 movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
 
         movement *= Time.deltaTime;
         transform.Translate(movement);
-        
+
         showDialogueBox();
-
     }
-
     private void showDialogueBox()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             trigger.TriggerDialogue();
         }
     }
-    private void OnCollisionEnter2D(Collision2D other) {
-
+    private void OnCollisionEnter2D(Collision2D other)
+    {
         speed = new Vector2(0, 0);
         StartCoroutine(charMoveReset());
-
     }
 
     IEnumerator charMoveReset()
@@ -58,5 +65,4 @@ public class player_controller : MonoBehaviour
 
         charMovement();
     }
-
 }

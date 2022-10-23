@@ -2,13 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Tree<T> : MonoBehaviour
 {
-    private void Start()
-    {
-       
-    }
+    public RhymesList<T> Root { get; set; }
 }
-
-
-
