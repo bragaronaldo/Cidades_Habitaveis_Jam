@@ -17,4 +17,5 @@ public class Player : MonoBehaviour
             DontDestroyOnLoad(other);
         }
     }
+
 }
