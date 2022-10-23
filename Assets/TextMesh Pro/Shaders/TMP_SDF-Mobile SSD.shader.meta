@@ -1,10 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 153e4b8cc9115b048aa8c21c07965946
+=======
+guid: c8d12adcee749c344b8117cf7c7eb912
+>>>>>>> aaa9acd5c458ef9d9b01898e62d8d767633199bd
 ShaderImporter:
   externalObjects: {}
   defaultTextures: []
   nonModifiableTextures: []
+<<<<<<< HEAD
   preprocessorOverride: 0
+=======
+>>>>>>> aaa9acd5c458ef9d9b01898e62d8d767633199bd
   userData: 
   assetBundleName: 
   assetBundleVariant: 
