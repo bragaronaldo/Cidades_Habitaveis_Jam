@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public enum BattleState
 {
     START, PLAYERTURN, ENEMYTURN, WON, LOST
@@ -10,8 +9,8 @@ public enum BattleState
 public class BattleSystem : MonoBehaviour
 {
     public BattleState state;
+    private int currentTurn = 1;
     private Text dialogueText;
-    [Header("PLAYER")]
     private GameObject playerPrefab;
     private Text playerNameInUI;
     private Text PlayerOptions;
@@ -20,15 +19,18 @@ public class BattleSystem : MonoBehaviour
     private BattleHUD playerHUD;
     private GameObject PlayerActionsUI;
     public GameObject PlayerCombatOptions;
-    [Header("ENEMY")]
-    public GameObject enemyPrefab;
-    public BattleHUD enemyHUD;
-    public Text enemyNameInUI;
-    public Transform enemyArea;
+    private GameObject enemyPrefab;
+    private BattleHUD enemyHUD;
+    private Text enemyNameInUI;
+    private Transform enemyArea;
     Unit enemyUnit;
+    public Text[] rhymingOptions;
+    private Rhymes rhymes;
+    private int rhymeIndex = 0;
     private void Start()
     {
         playerPrefab = GameObject.FindWithTag("Player").gameObject;
+        enemyPrefab = GameObject.FindWithTag("Enemy").gameObject;
 
         playerHUD = GameObject.FindWithTag("PlayerHUD").GetComponent<BattleHUD>();
         playerArea = GameObject.FindWithTag("PlayerArea").GetComponent<Transform>();
@@ -37,19 +39,41 @@ public class BattleSystem : MonoBehaviour
 
         dialogueText = GameObject.FindWithTag("DialogueText").GetComponent<Text>();
 
+        enemyHUD = GameObject.FindWithTag("EnemyHUD").GetComponent<BattleHUD>();
+        enemyArea = GameObject.FindWithTag("EnemyArea").GetComponent<Transform>();
+        enemyNameInUI = GameObject.FindWithTag("EnemyNameUI").GetComponent<Text>();
+
         state = BattleState.START;
         PlayerActionsUI.SetActive(false);
         StartCoroutine(SetupBattle());
+
+        enemyFill = GameObject.FindWithTag("EnemyFill").GetComponent<Image>();
+        playerFill = GameObject.FindWithTag("PlayerFill").GetComponent<Image>();
+
+        rhymes = GameObject.FindWithTag("Rhymes").GetComponent<Rhymes>();
+
+        PlayerCombatOptions.SetActive(false);
+
+        // chooseRhymes(currentTurn);
     }
+    // private void chooseRhymes(int mult)
+    // {
+    //     foreach (string rhyme in rhymes.rhymes)
+    //     {
+    //         rhymingOptions[rhymeIndex * mult].text = rhymes.rhymes[rhymeIndex * mult];
+    //         rhymeIndex++;
+    //     };
+    // }
     IEnumerator SetupBattle()
     {
         // GameObject player = Instantiate(playerPrefab, playerArea);
-
         GameObject player = playerPrefab;
         player.transform.position = playerArea.transform.position;
-        // GameObject player = playerArea.transform
         playerUnit = player.GetComponent<Unit>();
-        GameObject enemy = Instantiate(enemyPrefab, enemyArea);
+
+        // GameObject enemy = Instantiate(enemyPrefab, enemyArea);
+        GameObject enemy = enemyPrefab;
+        enemy.transform.position = enemyArea.transform.position;
         enemyUnit = enemy.GetComponent<Unit>();
 
         dialogueText.text = enemyUnit.unitName + " quer batalhar!";
@@ -168,17 +192,23 @@ public class BattleSystem : MonoBehaviour
     {
         dialogueText.text = "Perdeu moral!";
     }
+    // Esvaziar a barra de vida
+    private Image enemyFill;
+    private Image playerFill;
     void EndBattle()
     {
         if (state == BattleState.WON)
         {
             dialogueText.text = "Você ganhou a batalha!";
+            enemyFill.color = new Color32(0, 0, 0, 255);
         }
         else if (state == BattleState.LOST)
         {
             dialogueText.text = "Você perdeu a batalha!";
+            playerFill.color = new Color32(0, 0, 0, 255);
         }
     }
+    public FlowchartOptions flowchartOptions;
     void PlayerTurn()
     {
         PlayerActionsUI.SetActive(true);
@@ -186,6 +216,9 @@ public class BattleSystem : MonoBehaviour
     }
     public void Rimar()
     {
+        flowchartOptions.Combat(currentTurn);
+        currentTurn++;
+        Debug.Log(currentTurn);
         PlayerCombatOptions.SetActive(true);
     }
     public void OnAttackButton(int attackIndex)
@@ -195,4 +228,5 @@ public class BattleSystem : MonoBehaviour
             return;
         StartCoroutine(PlayerAttack(attackIndex));
     }
+
 }
