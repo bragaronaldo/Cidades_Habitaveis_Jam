@@ -23,7 +23,7 @@ public class FlowchartOptions : MonoBehaviour
         }
         if (turn == 2)
         {
-            SecondTurn();
+            // SecondTurn();
         }
         if (turn == 3)
         {
@@ -46,14 +46,14 @@ public class FlowchartOptions : MonoBehaviour
         // rhymingOptions[rhymes.rhymesList[0].index].text = rhymes.rhymesList[rhymes.rhymesList[0].index].rhymes;
         // Debug.Log(rhymes.rhymesList[0].index);
     }
-    private void SecondTurn()
-    {
-        foreach (string rhyme in rhymes.moreRhymes)
-        {
-            rhymingOptions[secondTurnIndex].text = rhymes.moreRhymes[secondTurnIndex];
-            secondTurnIndex++;
-        }
-    }
+    // private void SecondTurn()
+    // {
+    //     foreach (string rhyme in rhymes.moreRhymes)
+    //     {
+    //         rhymingOptions[secondTurnIndex].text = rhymes.moreRhymes[secondTurnIndex];
+    //         secondTurnIndex++;
+    //     }
+    // }
     private void ThirdTurn()
     {
 
