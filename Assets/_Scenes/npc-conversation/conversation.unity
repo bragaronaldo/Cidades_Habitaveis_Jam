@@ -377,6 +377,10 @@ MonoBehaviour:
   charSpeed: 10
   canva: {fileID: 0}
   trigger: {fileID: 1382451857}
+  blockMovement: 0
+  animator: {fileID: 0}
+  sprites: []
+  spriteRenderer: {fileID: 0}
 --- !u!61 &189148937
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5371,8 +5375,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1138817251}
   - component: {fileID: 1138817250}
-  - component: {fileID: 1138817249}
   - component: {fileID: 1138817252}
+  - component: {fileID: 1138817249}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5380,14 +5384,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1138817249
-AudioListener:
+--- !u!114 &1138817249
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138817248}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!20 &1138817250
 Camera:
   m_ObjectHideFlags: 0
@@ -5583,12 +5592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201f5958c70749d4780b8dbf2c1fca32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: Batata
-    sentences:
-    - Eai, mano tu viu o que rolou?
-    - "Bizarro n\xE9"
-    - "Vamo l\xE1"
 --- !u!224 &1382451858
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5637,9 +5640,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4ca51bb07571b4bb1292c57b0edeb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 1848240071}
-  dialogueText: {fileID: 213311545}
-  animator: {fileID: 1129106616}
 --- !u!4 &1758287968
 Transform:
   m_ObjectHideFlags: 0

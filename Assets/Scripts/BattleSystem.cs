@@ -16,6 +16,7 @@ public class BattleSystem : MonoBehaviour
     private Text PlayerOptions;
     private Transform playerArea;
     Unit playerUnit;
+    private player_controller _playerController;
     private BattleHUD playerHUD;
     private GameObject PlayerActionsUI;
     public GameObject PlayerCombatOptions;
@@ -31,6 +32,7 @@ public class BattleSystem : MonoBehaviour
     {
         playerPrefab = GameObject.FindWithTag("Player").gameObject;
         enemyPrefab = GameObject.FindWithTag("Enemy").gameObject;
+        _playerController = GameObject.FindWithTag("Player").GetComponent<player_controller>();
 
         playerHUD = GameObject.FindWithTag("PlayerHUD").GetComponent<BattleHUD>();
         playerArea = GameObject.FindWithTag("PlayerArea").GetComponent<Transform>();
@@ -50,7 +52,7 @@ public class BattleSystem : MonoBehaviour
         enemyFill = GameObject.FindWithTag("EnemyFill").GetComponent<Image>();
         playerFill = GameObject.FindWithTag("PlayerFill").GetComponent<Image>();
 
-        rhymes = GameObject.FindWithTag("Rhymes").GetComponent<Rhymes>();
+        // rhymes = GameObject.FindWithTag("Rhymes").GetComponent<Rhymes>();
 
         PlayerCombatOptions.SetActive(false);
 
@@ -66,6 +68,7 @@ public class BattleSystem : MonoBehaviour
     // }
     IEnumerator SetupBattle()
     {
+        _playerController.spriteRenderer.sprite = _playerController.sprites[0];
         // GameObject player = Instantiate(playerPrefab, playerArea);
         GameObject player = playerPrefab;
         player.transform.position = playerArea.transform.position;
