@@ -1,23 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 115a25559b2ba624894c0deb02e50891
-TrueTypeFontImporter:
-  externalObjects: {}
-  serializedVersion: 4
-  fontSize: 16
-  forceTextureCase: -2
-  characterSpacing: 0
-  characterPadding: 1
-  includeFontData: 1
-  fontNames:
-  - Liberation Sans
-  fallbackFontReferences: []
-  customCharacters: 
-  fontRenderingMode: 0
-  ascentCalculationMode: 1
-  useLegacyBoundsCalculation: 0
-  shouldRoundAdvanceValue: 1
-=======
 guid: e3265ab4bf004d28a9537516768c1c75
 timeCreated: 1484171297
 licenseType: Pro
@@ -33,7 +14,6 @@ TrueTypeFontImporter:
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
->>>>>>> aaa9acd5c458ef9d9b01898e62d8d767633199bd
   userData: 
   assetBundleName: 
   assetBundleVariant: 

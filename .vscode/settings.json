@@ -2,12 +2,8 @@
     "files.exclude":
     {
         "**/.DS_Store":true,
-<<<<<<< HEAD
         "**/.git":true,
         "**/.gitignore":false,
-=======
-        "**/.git":true,        
->>>>>>> 24a7c3446c09df4b5479a366f7c09d3751bf9bec
         "**/.gitmodules":true,
         "**/*.booproj":true,
         "**/*.pidb":true,
@@ -46,7 +42,7 @@
         "**/*.mat":true,
         "**/*.meta":false,
         "**/*.prefab":true,
-        "**/*.unity":true,
+        "**/*.unity":false,
         "build/":true,
         "Build/":true,
         "Library/":true,

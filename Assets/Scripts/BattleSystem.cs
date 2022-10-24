@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public enum BattleState
 {
     START, PLAYERTURN, ENEMYTURN, WON, LOST
@@ -25,6 +26,8 @@ public class BattleSystem : MonoBehaviour
     private Text enemyNameInUI;
     private Transform enemyArea;
     Unit enemyUnit;
+    private AudioSource audioSource;
+    public AudioClip[] songs;
 
     private Enemy enemyA;
     private void Start()
@@ -52,15 +55,15 @@ public class BattleSystem : MonoBehaviour
         enemyFill = GameObject.FindWithTag("EnemyFill").GetComponent<Image>();
         playerFill = GameObject.FindWithTag("PlayerFill").GetComponent<Image>();
 
-
+        audioSource = GameObject.FindWithTag("AudioSource").GetComponent<AudioSource>();
         PlayerCombatOptions.SetActive(false);
 
     }
-  
+
     IEnumerator SetupBattle()
     {
         _playerController.spriteRenderer.sprite = _playerController.sprites[5];
-        _playerController.transform.localScale = new Vector3(0.05f,0.05f,0.05f);
+        // _playerController.transform.localScale = new Vector3(0.05f,0.05f,0.05f);
 
         enemyA.ChangeSprite(0);
         // GameObject player = Instantiate(playerPrefab, playerArea);
@@ -201,13 +204,23 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             dialogueText.text = "Você ganhou a batalha!";
+            audioSource.clip = songs[1];
+            audioSource.Play();
             enemyFill.color = new Color32(0, 0, 0, 255);
         }
         else if (state == BattleState.LOST)
         {
             dialogueText.text = "Você perdeu a batalha!";
+            audioSource.clip = songs[2];
+            audioSource.Play();
             playerFill.color = new Color32(0, 0, 0, 255);
+            StartCoroutine(EndGame());
         }
+    }
+    IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("EndGame");
     }
     void PlayerTurn()
     {
