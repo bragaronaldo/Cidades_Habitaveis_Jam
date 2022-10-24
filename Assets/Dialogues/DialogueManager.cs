@@ -9,23 +9,30 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     private Queue<string> sentences;
+    private Queue<string> names;
     public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        names = new Queue<string>();
     }
 
-    public void StartDialogue (Dialogue dialogue)
+    public void StartDialogue (Dialogue[] dialogue)
     {
         animator.SetBool("isOpen", true);
-        nameText.text = dialogue.name;
+        
 
         sentences.Clear();
+        names.Clear();
 
-        foreach (string sentence in dialogue.sentences)
+        foreach (Dialogue converse in dialogue)
         {
+            foreach (string sentence in converse.sentences)
+        {
+            names.Enqueue(converse.names[0]);
             sentences.Enqueue(sentence);
+        }
         }
 
         DisplayNextSentence();
@@ -39,15 +46,25 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        if (names.Count == 0)
+        {
+            EndDialogue();
+            return;
+        }
+
+        string name = names.Dequeue();
         string sentence = sentences.Dequeue();
+        
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        StartCoroutine(TypeSentence(sentence, name));
     }
 
 
-    IEnumerator TypeSentence (string sentence)
+    IEnumerator TypeSentence (string sentence, string name)
     {
         dialogueText.text = "";
+        nameText.text = name;
+
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
