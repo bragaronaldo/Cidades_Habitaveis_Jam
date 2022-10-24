@@ -6,11 +6,18 @@ using UnityEngine.SceneManagement;
 public class ChangeScene : MonoBehaviour
 {
     public int index;
+    public Animator animator;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player" || index == 0)
         {
-            SceneManager.LoadScene(2);
+            StartCoroutine(transition());
         }
+    }
+    IEnumerator transition()
+    {
+        animator.SetTrigger("Start");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(4);
     }
 }
