@@ -5201,6 +5201,102 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1280089003267219083, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089003267219083, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -49
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089003267219188, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089003267219188, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c2124adabeccdd842b3e40402053d26a, type: 2}
+    - target: {fileID: 1280089003267219188, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089003267219188, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089003267219188, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 897770874699382651, guid: c2124adabeccdd842b3e40402053d26a, type: 2}
+    - target: {fileID: 1280089003563152590, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -8.6442
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089003563152590, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -5.808
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089003563152590, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.6768875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089003563152590, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000002861023
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089003563152591, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f3e0372ddc80af2419aa269d0349cd1b, type: 3}
+    - target: {fileID: 1280089003974265932, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089003974265932, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089003974265933, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_margin.z
+      value: 2.105156
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089003974265933, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 45239c310be4ffc4caa456e78ab1a79a, type: 2}
+    - target: {fileID: 1280089003974265933, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089003974265933, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5126477741030274430, guid: 45239c310be4ffc4caa456e78ab1a79a, type: 2}
+    - target: {fileID: 1280089004487495368, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 192.9524
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089004487495368, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.6261325
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089004487495368, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.3443356
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089004487495368, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.500516
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089004487495368, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -508
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280089004487495368, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 111
+      objectReference: {fileID: 0}
     - target: {fileID: 1280089004487495369, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5450,6 +5546,31 @@ PrefabInstance:
     - target: {fileID: 7056598742468372780, guid: 7b792a51d16798743b09da444ae1577a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7056598742468372782, guid: 7b792a51d16798743b09da444ae1577a, type: 3}
+      propertyPath: dialogue.Array.data[0].sentences.Array.data[0]
+      value: Coe, Gil! Firmeza, meu patrao?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7056598742468372782, guid: 7b792a51d16798743b09da444ae1577a, type: 3}
+      propertyPath: dialogue.Array.data[1].sentences.Array.data[0]
+      value: 'Coe, Batata! Tudo beleza, irmao.
+
+        Movimento ai ta como?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7056598742468372782, guid: 7b792a51d16798743b09da444ae1577a, type: 3}
+      propertyPath: dialogue.Array.data[2].sentences.Array.data[0]
+      value: "Ta devagar, ta devagar\u2026\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7056598742468372782, guid: 7b792a51d16798743b09da444ae1577a, type: 3}
+      propertyPath: dialogue.Array.data[2].sentences.Array.data[1]
+      value: 'Mas ai fiquei sabendo que e seu aniversario hoje!
+
+        Parabens,
+        maninho!
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7056598742468372786, guid: 7b792a51d16798743b09da444ae1577a, type: 3}
       propertyPath: m_Name
