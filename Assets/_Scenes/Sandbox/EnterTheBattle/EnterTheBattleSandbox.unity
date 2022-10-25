@@ -312,20 +312,12 @@ SpriteRenderer:
   m_SortingLayerID: -2064379399
   m_SortingLayer: 3
   m_SortingOrder: 0
-<<<<<<< HEAD
   m_Sprite: {fileID: -5233588708489882991, guid: 8a782656d441fe24ab948f12db414f5a, type: 3}
-=======
-  m_Sprite: {fileID: 21300000, guid: 40fe8b1cd2944b341a8eb53a3d422aa4, type: 3}
->>>>>>> aaa9acd5c458ef9d9b01898e62d8d767633199bd
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-<<<<<<< HEAD
   m_Size: {x: 20.1875, y: 37.772686}
-=======
-  m_Size: {x: 3, y: 3}
->>>>>>> aaa9acd5c458ef9d9b01898e62d8d767633199bd
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -403,13 +395,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
     oldSize: {x: 20.1875, y: 37.772686}
     newSize: {x: 20.1875, y: 37.772686}
-=======
-    oldSize: {x: 3, y: 3}
-    newSize: {x: 3, y: 3}
->>>>>>> aaa9acd5c458ef9d9b01898e62d8d767633199bd
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -585,13 +572,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
     oldSize: {x: 18.1875, y: 37.772686}
     newSize: {x: 18.1875, y: 37.772686}
-=======
-    oldSize: {x: 3, y: 3}
-    newSize: {x: 3, y: 3}
->>>>>>> aaa9acd5c458ef9d9b01898e62d8d767633199bd
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -671,21 +653,12 @@ SpriteRenderer:
   m_SortingLayerID: -2064379399
   m_SortingLayer: 3
   m_SortingOrder: 0
-<<<<<<< HEAD
   m_Sprite: {fileID: 2559226554024213785, guid: 8a782656d441fe24ab948f12db414f5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 18.1875, y: 37.772686}
-=======
-  m_Sprite: {fileID: 21300000, guid: 40fe8b1cd2944b341a8eb53a3d422aa4, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_FlipX: 1
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 3, y: 3}
->>>>>>> aaa9acd5c458ef9d9b01898e62d8d767633199bd
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -6,16 +6,30 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI dialogueText;
+    private TextMeshProUGUI nameText;
+    private TextMeshProUGUI dialogueText;
     private Queue<string> sentences;
+
+    [SerializeField]
+    private player_controller _player;
+
     private Queue<string> names;
-    public Animator animator;
+
+
+    private Animator animator;
     // Start is called before the first frame update
+
+    private void Awake() {
+        nameText = GameObject.FindGameObjectWithTag("Dialog_Name").GetComponent<TextMeshProUGUI>();
+        dialogueText = GameObject.FindGameObjectWithTag("Dialog_Conversation").GetComponent<TextMeshProUGUI>();
+
+    }
     void Start()
     {
         sentences = new Queue<string>();
         names = new Queue<string>();
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<player_controller>();
+        animator = GameObject.FindGameObjectWithTag("Dialog_Animator").GetComponent<Animator>();
     }
 
     public void StartDialogue (Dialogue[] dialogue)
@@ -40,6 +54,8 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence ()
     {
+        Debug.Log("aqui foi");
+
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -74,6 +90,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue ()
     {
         animator.SetBool("isOpen", false);
+        _player.dialogBoxIsOpen = false;
     }
 
 }
