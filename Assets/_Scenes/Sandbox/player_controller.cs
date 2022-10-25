@@ -9,7 +9,6 @@ public class player_controller : MonoBehaviour
     public DialogueTrigger trigger;
     Vector2 speed;
     public bool blockMovement = false;
-    public Animator animator;
     public Sprite[] sprites;
     public SpriteRenderer spriteRenderer;
     void Start()
@@ -25,6 +24,10 @@ public class player_controller : MonoBehaviour
         }
     }
 
+    public void ChangeSprite(int i)
+    {
+        spriteRenderer.sprite = sprites[i];
+    }
     public void charMovement()
     {
         float inputX = Input.GetAxis("Horizontal");
@@ -47,7 +50,7 @@ public class player_controller : MonoBehaviour
         {
             spriteRenderer.sprite = sprites[3];
         }
-        
+
         Vector3 movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
 
         movement *= Time.deltaTime;

@@ -67,10 +67,9 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
-        _playerController.spriteRenderer.sprite = _playerController.sprites[5];
-        // _playerController.transform.localScale = new Vector3(0.05f,0.05f,0.05f);
+        _playerController.ChangeSprite(5);
 
-        enemyA.ChangeSprite(0);
+        enemyA.ChangeSprite(2);
         // GameObject player = Instantiate(playerPrefab, playerArea);
         GameObject player = playerPrefab;
         player.transform.position = playerArea.transform.position;
@@ -221,8 +220,8 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         PlayerActionsUI.SetActive(false);
-        _playerController.spriteRenderer.sprite = _playerController.sprites[5];
-        enemyA.ChangeSprite(1);
+        _playerController.ChangeSprite(5);
+        enemyA.ChangeSprite(3);
 
 
         dialogueText.text = enemyUnit.unitName + " vai rimar!";
@@ -283,7 +282,7 @@ public class BattleSystem : MonoBehaviour
     void PlayerTurn()
     {
         _playerController.spriteRenderer.sprite = _playerController.sprites[4];
-        enemyA.ChangeSprite(0);
+        enemyA.ChangeSprite(2);
 
 
         PlayerActionsUI.SetActive(true);

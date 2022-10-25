@@ -2424,7 +2424,7 @@ GameObject:
   - component: {fileID: 1354607233}
   m_Layer: 0
   m_Name: AudioSystem
-  m_TagString: Untagged
+  m_TagString: AudioSource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3362,7 +3362,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  playerHUD: {fileID: 0}
   PlayerCombatOptions: {fileID: 2119004508}
+  trigger: {fileID: 0}
+  songs: []
 --- !u!4 &1837698083
 Transform:
   m_ObjectHideFlags: 0
