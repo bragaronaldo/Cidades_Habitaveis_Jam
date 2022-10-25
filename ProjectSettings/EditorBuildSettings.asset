@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Main/BattleScene.unity
     guid: c470a3c77af7ea64aa08d528d5681b54
+  - enabled: 1
+    path: Assets/_Scenes/_Master/01Quarto.unity
+    guid: 1ceed0c8108ab3c45a1e8781124f8ea6
+  - enabled: 1
+    path: Assets/_Scenes/_Master/10Creditos.unity
+    guid: 2f5a7000fc2095b4eb640278d7b2e4e3
+  - enabled: 1
+    path: Assets/_Scenes/_Master/02Sala.unity
+    guid: bc9481254ca8e87479cdde4c6ba0ba53
   m_configObjects: {}
