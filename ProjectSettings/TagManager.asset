@@ -21,6 +21,12 @@ TagManager:
   - Rhymes
   - PlayerRhymes
   - AudioSource
+  - Dialog_Animator
+  - Interaction_Animator
+  - Dialog_Name
+  - Dialog_Conversation
+  - Continue_Button
+  - Dialog_Manager
   layers:
   - Default
   - TransparentFX

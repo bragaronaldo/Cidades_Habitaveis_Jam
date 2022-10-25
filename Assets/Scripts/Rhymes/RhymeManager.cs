@@ -11,6 +11,7 @@ public class RhymeManager : MonoBehaviour
     public Text rhymeOp3;
     public Text rhymeOp4;
 
+
     private List<Text> rhymeOptions;
     private List<string> rhymesPerTurn;
     public Text dialogueText;
