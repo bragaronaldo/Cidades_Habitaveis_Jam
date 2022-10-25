@@ -10,19 +10,12 @@ public class player_controller : MonoBehaviour
 
     public Vector2 speed;
     public bool blockMovement = false;
-<<<<<<< HEAD
-=======
     public bool allowDialogBox = false;
 
     public bool dialogBoxIsOpen = false;
     private Animator animator;
->>>>>>> 667f73e43d7b6fb700501772b721f6c49287e70e
     public Sprite[] sprites;
     public SpriteRenderer spriteRenderer;
-
-    void Awake() {
-        animator = GameObject.FindGameObjectWithTag("Interaction_Animator").GetComponent<Animator>();
-    }
     void Start()
     {
         speed = new Vector2(charSpeed, charSpeed);
@@ -79,15 +72,16 @@ public class player_controller : MonoBehaviour
     {
         if (allowDialogBox == true)
         {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            trigger.TriggerDialogue();
-            dialogBoxIsOpen = true;
-        }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                trigger.TriggerDialogue();
+                dialogBoxIsOpen = true;
+            }
         }
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
+        animator = GameObject.FindGameObjectWithTag("Interaction_Animator").GetComponent<Animator>();
         animator.SetBool("interactionOpen", true);
         speed = new Vector2(0, 0);
         allowDialogBox = true;
@@ -96,6 +90,7 @@ public class player_controller : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D other)
     {
+        animator = GameObject.FindGameObjectWithTag("Interaction_Animator").GetComponent<Animator>();
         animator.SetBool("interactionOpen", false);
         allowDialogBox = false;
     }

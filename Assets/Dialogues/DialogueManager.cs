@@ -19,7 +19,8 @@ public class DialogueManager : MonoBehaviour
     private Animator animator;
     // Start is called before the first frame update
 
-    private void Awake() {
+    private void Awake()
+    {
         nameText = GameObject.FindGameObjectWithTag("Dialog_Name").GetComponent<TextMeshProUGUI>();
         dialogueText = GameObject.FindGameObjectWithTag("Dialog_Conversation").GetComponent<TextMeshProUGUI>();
 
@@ -32,10 +33,10 @@ public class DialogueManager : MonoBehaviour
         animator = GameObject.FindGameObjectWithTag("Dialog_Animator").GetComponent<Animator>();
     }
 
-    public void StartDialogue (Dialogue[] dialogue)
+    public void StartDialogue(Dialogue[] dialogue)
     {
         animator.SetBool("isOpen", true);
-        
+
 
         sentences.Clear();
         names.Clear();
@@ -43,19 +44,17 @@ public class DialogueManager : MonoBehaviour
         foreach (Dialogue converse in dialogue)
         {
             foreach (string sentence in converse.sentences)
-        {
-            names.Enqueue(converse.names[0]);
-            sentences.Enqueue(sentence);
-        }
+            {
+                names.Enqueue(converse.names[0]);
+                sentences.Enqueue(sentence);
+            }
         }
 
         DisplayNextSentence();
     }
 
-    public void DisplayNextSentence ()
+    public void DisplayNextSentence()
     {
-        Debug.Log("aqui foi");
-
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -70,13 +69,13 @@ public class DialogueManager : MonoBehaviour
 
         string name = names.Dequeue();
         string sentence = sentences.Dequeue();
-        
+
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence, name));
     }
 
 
-    IEnumerator TypeSentence (string sentence, string name)
+    IEnumerator TypeSentence(string sentence, string name)
     {
         dialogueText.text = "";
         nameText.text = name;
@@ -87,7 +86,7 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
     }
-    void EndDialogue ()
+    void EndDialogue()
     {
         animator.SetBool("isOpen", false);
         _player.dialogBoxIsOpen = false;
