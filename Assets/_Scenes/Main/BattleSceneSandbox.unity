@@ -722,7 +722,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   PlayerCombatOptions: {fileID: 1467724732}
-  songs: []
+  songs:
+  - {fileID: 8300000, guid: 9a5e97120abb4394db5e76eb14903e16, type: 3}
+  - {fileID: 8300000, guid: fd2d91c2d729f864bbf6c0ad12a70168, type: 3}
+  - {fileID: 8300000, guid: afe37c7b9b22ce44da15f4b252e4a02b, type: 3}
 --- !u!4 &362378586
 Transform:
   m_ObjectHideFlags: 0

@@ -265,6 +265,8 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = "Você ganhou a batalha!";
             audioSource.clip = songs[1];
             audioSource.Play();
+            StartCoroutine(EndGame());
+
         }
         else if (state == BattleState.LOST)
         {
@@ -278,8 +280,16 @@ public class BattleSystem : MonoBehaviour
     }
     IEnumerator EndGame()
     {
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("EndGame");
+        if (state == BattleState.LOST)
+        {
+            yield return new WaitForSeconds(songs[2].length + 0.2f);
+            SceneManager.LoadScene("EndGame");
+        }
+        if (state == BattleState.WON)
+        {
+            yield return new WaitForSeconds(songs[1].length + 0.4f);
+            SceneManager.LoadScene("EndGame");
+        }
     }
     void PlayerTurn()
     {
