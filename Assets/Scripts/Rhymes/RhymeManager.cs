@@ -12,7 +12,7 @@ public class RhymeManager : MonoBehaviour
     public Text rhymeOp4;
 
 
-    private List<Text> rhymeOptions;
+    [SerializeField] private List<Text> rhymeOptions;
     private List<string> rhymesPerTurn;
     public Text dialogueText;
     public Text choosenRhymeBox;
@@ -22,7 +22,6 @@ public class RhymeManager : MonoBehaviour
     public Animator animator;
 
     public int i;
-    // Start is called before the first frame update
     void Start()
     {
         critRhymes = new Queue<string>();
@@ -66,6 +65,8 @@ public class RhymeManager : MonoBehaviour
         string normalRhyme2 = normalRhymes.Dequeue();
         string badRhyme = badRhymes.Dequeue();
 
+        Debug.Log("rhyme " + rhymeOptions);
+
         StopAllCoroutines();
         StartCoroutine(TypeRhymes(critRhyme, normalRhyme, normalRhyme2, badRhyme));
     }
@@ -73,6 +74,7 @@ public class RhymeManager : MonoBehaviour
 
     IEnumerator TypeRhymes (string critRhyme, string normalRhyme, string normalRhyme2, string badRhyme)
     {
+        rhymeOptions.Clear();
         rhymeOp1.text = "";
         rhymeOp2.text = "";
         rhymeOp3.text = "";
@@ -90,10 +92,11 @@ public class RhymeManager : MonoBehaviour
         Debug.Log(rhymeOptions);
         foreach(string rhyme in rhymesPerTurn)
         {
-            Debug.Log(i);
+            // Debug.Log(i);
             i = Random.Range(0, rhymeOptions.Count);
             rhymeOptions[i].text = rhyme;
             rhymeOptions.RemoveAt(i);
+            Debug.Log(i);
             yield return null;
         }
 

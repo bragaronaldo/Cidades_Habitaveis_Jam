@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9101889936792785390}
   - component: {fileID: 9101889936792785391}
   - component: {fileID: 9101889936792785389}
-  - component: {fileID: 1697793799}
+  - component: {fileID: 56478544}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515d60e18bbf5084c83cc01b6e67da64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Joao
+  unitName: Gil
   unitLevel: 1
   lowDamage: 30
   mediumDamage: 80
@@ -172,7 +172,7 @@ MonoBehaviour:
   damage: 0
   maxHP: 500
   currentHP: 500
---- !u!50 &1697793799
+--- !u!50 &56478544
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -183,8 +183,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 5.7224936
+  m_UseAutoMass: 0
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -192,4 +192,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 6
+  m_Constraints: 0

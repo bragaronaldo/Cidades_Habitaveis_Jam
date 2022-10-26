@@ -33,11 +33,11 @@ public class BattleSystem : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip[] songs;
 
-    private Enemy enemyA;
+    private Enemy enemySprite;
     private void Start()
     {
         trigger = FindObjectOfType<RhymeTrigger>();
-        enemyA = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
+        enemySprite = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
         playerPrefab = GameObject.FindWithTag("Player").gameObject;
         enemyPrefab = GameObject.FindWithTag("Enemy").gameObject;
         _playerController = GameObject.FindWithTag("Player").GetComponent<player_controller>();
@@ -69,7 +69,7 @@ public class BattleSystem : MonoBehaviour
     {
         _playerController.ChangeSprite(5);
 
-        enemyA.ChangeSprite(2);
+        enemySprite.ChangeSprite(2);
         // GameObject player = Instantiate(playerPrefab, playerArea);
         GameObject player = playerPrefab;
         player.transform.position = playerArea.transform.position;
@@ -100,7 +100,7 @@ public class BattleSystem : MonoBehaviour
         PlayerActionsUI.SetActive(false);
     }
     IEnumerator PlayerAttack(GameObject rhyme)
-    {   
+    {
         string ojbChildrenText = rhyme.GetComponentInChildren<Text>().text;
         int indexInCrit = Array.IndexOf(trigger.rhyme.critRhymes, ojbChildrenText);
         int indexInNormal = Array.IndexOf(trigger.rhyme.normalRhymes, ojbChildrenText);
@@ -221,7 +221,7 @@ public class BattleSystem : MonoBehaviour
     {
         PlayerActionsUI.SetActive(false);
         _playerController.ChangeSprite(5);
-        enemyA.ChangeSprite(3);
+        enemySprite.ChangeSprite(3);
 
 
         dialogueText.text = enemyUnit.unitName + " vai rimar!";
@@ -260,17 +260,19 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.WON)
         {
+            enemyFill.color = new Color32(0, 0, 0, 255);
+
             dialogueText.text = "Você ganhou a batalha!";
             audioSource.clip = songs[1];
             audioSource.Play();
-            enemyFill.color = new Color32(0, 0, 0, 255);
         }
         else if (state == BattleState.LOST)
         {
+            playerFill.color = new Color32(0, 0, 0, 255);
+
             dialogueText.text = "Você perdeu a batalha!";
             audioSource.clip = songs[2];
             audioSource.Play();
-            playerFill.color = new Color32(0, 0, 0, 255);
             StartCoroutine(EndGame());
         }
     }
@@ -282,8 +284,7 @@ public class BattleSystem : MonoBehaviour
     void PlayerTurn()
     {
         _playerController.spriteRenderer.sprite = _playerController.sprites[4];
-        enemyA.ChangeSprite(2);
-
+        enemySprite.ChangeSprite(2);
 
         PlayerActionsUI.SetActive(true);
         dialogueText.text = "Escolha uma ação: ";
@@ -292,6 +293,7 @@ public class BattleSystem : MonoBehaviour
     {
         currentTurn++;
         PlayerCombatOptions.SetActive(true);
+        PlayerActionsUI.SetActive(false);
     }
     public void OnAttackButton(GameObject rhyme)
     {
