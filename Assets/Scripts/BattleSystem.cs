@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 public enum BattleState
 {
     START, PLAYERTURN, ENEMYTURN, WON, LOST
@@ -101,16 +102,20 @@ public class BattleSystem : MonoBehaviour
     }
     IEnumerator PlayerAttack(GameObject rhyme)
     {
+        var critRhymes = Filter(trigger, "crit");
+        var normalRhymes = Filter(trigger, "normal");
+        var badRhymes = Filter(trigger, "bad");
+
         string ojbChildrenText = rhyme.GetComponentInChildren<Text>().text;
-        int indexInCrit = Array.IndexOf(trigger.rhyme.critRhymes, ojbChildrenText);
-        int indexInNormal = Array.IndexOf(trigger.rhyme.normalRhymes, ojbChildrenText);
-        int indexInBad = Array.IndexOf(trigger.rhyme.badRhymes, ojbChildrenText);
+        int indexInCrit = Array.IndexOf(critRhymes, ojbChildrenText);
+        int indexInNormal = Array.IndexOf(normalRhymes, ojbChildrenText);
+        int indexInBad = Array.IndexOf(badRhymes, ojbChildrenText);
 
         if (indexInCrit > -1)
         {
             ShowHideUIInBattle();
             bool isDead = enemyUnit.TakeDamage(playerUnit.highDamage);
-            dialogueText.text = trigger.rhyme.critRhymes[indexInCrit];
+            dialogueText.text = trigger.rhymes[indexInCrit].structures[indexInCrit].rhymeText;
             yield return new WaitForSeconds(waitingTime);
             dialogueText.text = "Escaldou!";
             yield return new WaitForSeconds(waitingTime);
@@ -133,7 +138,7 @@ public class BattleSystem : MonoBehaviour
         {
             ShowHideUIInBattle();
             bool isDead = enemyUnit.TakeDamage(playerUnit.mediumDamage);
-            dialogueText.text = trigger.rhyme.normalRhymes[indexInNormal];
+            dialogueText.text = trigger.rhymes[indexInNormal].structures[indexInNormal].rhymeText;
             yield return new WaitForSeconds(waitingTime);
             dialogueText.text = "Pô, deu pro gasto até";
             yield return new WaitForSeconds(waitingTime);
@@ -156,7 +161,7 @@ public class BattleSystem : MonoBehaviour
         {
             ShowHideUIInBattle();
             bool isDead = enemyUnit.TakeDamage(playerUnit.lowDamage);
-            dialogueText.text = trigger.rhyme.badRhymes[indexInBad];
+            dialogueText.text = trigger.rhymes[indexInBad].structures[indexInBad].rhymeText;
             yield return new WaitForSeconds(waitingTime);
             dialogueText.text = "Pô, deu mole!";
             yield return new WaitForSeconds(waitingTime);
@@ -312,5 +317,10 @@ public class BattleSystem : MonoBehaviour
             return;
         StartCoroutine(PlayerAttack(rhyme));
     }
+
+    public RhymeHub[] Filter(RhymeTrigger input, string rhymeType)
+{
+    return input.rhymes.Where(c => c.type == rhymeType).ToArray();
+}
 
 }

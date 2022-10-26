@@ -304,22 +304,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87819fc131164294f907f1a244b306e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rhyme:
-    critRhymes:
-    - habilidoso nas 4 linhas
-    - e nas batalhas da vida
-    - "Gil \xE9 bola de ouro da rima"
-    normalRhymes:
-    - revolucione muito antes
-    - sou antigo e vaidoso
-    - pq lutei pelo meu povo
-    - tyg
-    - hghgfj
-    - hghghg
-    badRhymes:
-    - "Gil \xE9 Ronaldinho isso \xE9 fato"
-    - "outro fato Cnegao \xE9 Ronaldo"
-    - "fen\xF4meno das linhas"
+  rhymes:
+  - type: crit
+    structures:
+    - rhymePreview: Rimar sobre X
+      rhymeText: Rima sobre X e tal
+    - rhymePreview: Rimar sobre Y
+      rhymeText: Rima sobre Y e tal
+  - type: normal
+    structures:
+    - rhymePreview: Rimar normal sobre X
+      rhymeText: Rima sobre X e tal
+    - rhymePreview: Rimar normal sobre Y
+      rhymeText: Rima sobre Y e tal
+  - type: bad
+    structures:
+    - rhymePreview: Rimar mal sobre X
+      rhymeText: Rima sobre X e tal
+    - rhymePreview: Rimar mal sobre Y
+      rhymeText: Rima sobre Y e tal
 --- !u!4 &115635629
 Transform:
   m_ObjectHideFlags: 0
@@ -2737,7 +2740,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1584333725}
-  - component: {fileID: 1584333724}
   - component: {fileID: 1584333723}
   m_Layer: 0
   m_Name: Rhymes
@@ -2764,18 +2766,6 @@ MonoBehaviour:
   - {fileID: 782250425}
   - {fileID: 1535105101}
   - {fileID: 1622351640}
---- !u!114 &1584333724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584333722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d42ef3b804a625b4db6e9b52f5dd0ab0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1584333725
 Transform:
   m_ObjectHideFlags: 0

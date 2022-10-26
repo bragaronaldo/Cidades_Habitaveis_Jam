@@ -5,9 +5,9 @@ using UnityEngine;
 public class RhymeTrigger : MonoBehaviour
 {
 
-    public RhymeHub rhyme;
+    public RhymeHub[] rhymes;
     public void TriggerRhyme()
     {
-        FindObjectOfType<RhymeManager>().StartRhymes(rhyme);
+        FindObjectOfType<RhymeManager>().StartRhymes(rhymes);
     }
 }

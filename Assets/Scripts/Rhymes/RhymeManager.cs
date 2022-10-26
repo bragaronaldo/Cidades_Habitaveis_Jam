@@ -11,7 +11,6 @@ public class RhymeManager : MonoBehaviour
     public Text rhymeOp3;
     public Text rhymeOp4;
 
-
     [SerializeField] private List<Text> rhymeOptions;
     private List<string> rhymesPerTurn;
     public Text dialogueText;
@@ -31,26 +30,38 @@ public class RhymeManager : MonoBehaviour
         rhymesPerTurn = new List<string>();
     }
 
-    public void StartRhymes (RhymeHub rhyme)
+    public void StartRhymes (RhymeHub[] rhyme)
     {
         
         critRhymes.Clear();
         normalRhymes.Clear();
         badRhymes.Clear();
 
-        foreach (string rhymeLine in rhyme.critRhymes)
+        foreach (RhymeHub rhymeObj in rhyme)
         {
-            critRhymes.Enqueue(rhymeLine);
-        }
+            if (rhymeObj.type == "crit")
+            {
+            foreach (RhymeStructure rhymeLine in rhymeObj.structures)
+                {
+                    critRhymes.Enqueue(rhymeLine.rhymePreview);
+                }
+            }
 
-        foreach (string rhymeLine in rhyme.normalRhymes)
-        {
-            normalRhymes.Enqueue(rhymeLine);
-        }
+            if (rhymeObj.type == "normal")
+            {
+            foreach (RhymeStructure rhymeLine in rhymeObj.structures)
+                {
+                    normalRhymes.Enqueue(rhymeLine.rhymePreview);
+                }
+            }
 
-        foreach (string rhymeLine in rhyme.badRhymes)
-        {
-            badRhymes.Enqueue(rhymeLine);
+            if (rhymeObj.type == "bad")
+            {
+            foreach (RhymeStructure rhymeLine in rhymeObj.structures)
+                {
+                    badRhymes.Enqueue(rhymeLine.rhymePreview);
+                }
+            }
         }
 
         DisplayNextSentence();
@@ -64,8 +75,6 @@ public class RhymeManager : MonoBehaviour
         string normalRhyme = normalRhymes.Dequeue();
         string normalRhyme2 = normalRhymes.Dequeue();
         string badRhyme = badRhymes.Dequeue();
-
-        Debug.Log("rhyme " + rhymeOptions);
 
         StopAllCoroutines();
         StartCoroutine(TypeRhymes(critRhyme, normalRhyme, normalRhyme2, badRhyme));
@@ -89,14 +98,12 @@ public class RhymeManager : MonoBehaviour
         rhymesPerTurn.Add(normalRhyme2);
         rhymesPerTurn.Add(badRhyme);
 
-        Debug.Log(rhymeOptions);
         foreach(string rhyme in rhymesPerTurn)
         {
             // Debug.Log(i);
             i = Random.Range(0, rhymeOptions.Count);
             rhymeOptions[i].text = rhyme;
             rhymeOptions.RemoveAt(i);
-            Debug.Log(i);
             yield return null;
         }
 
