@@ -27,6 +27,7 @@ TagManager:
   - Dialog_Conversation
   - Continue_Button
   - Dialog_Manager
+  - Dialogue_Trigger
   layers:
   - Default
   - TransparentFX

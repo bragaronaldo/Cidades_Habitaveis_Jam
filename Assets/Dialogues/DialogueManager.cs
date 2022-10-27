@@ -9,15 +9,9 @@ public class DialogueManager : MonoBehaviour
     private TextMeshProUGUI nameText;
     private TextMeshProUGUI dialogueText;
     private Queue<string> sentences;
-
-    [SerializeField]
     private player_controller _player;
-
     private Queue<string> names;
-
-
     private Animator animator;
-    // Start is called before the first frame update
 
     private void Awake()
     {

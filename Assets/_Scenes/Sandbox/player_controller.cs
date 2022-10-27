@@ -6,7 +6,7 @@ public class player_controller : MonoBehaviour
 {
     public float charSpeed;
     public GameObject canva;
-    public DialogueTrigger trigger;
+    private DialogueTrigger trigger;
 
     public Vector2 speed;
     public bool blockMovement = false;
@@ -74,6 +74,8 @@ public class player_controller : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                trigger = GameObject.FindWithTag("Dialogue_Trigger").GetComponent<DialogueTrigger>();
+
                 trigger.TriggerDialogue();
                 dialogBoxIsOpen = true;
             }
