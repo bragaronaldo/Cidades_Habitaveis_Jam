@@ -29,6 +29,11 @@ public class BattleSystem : MonoBehaviour
     private Transform enemyArea;
 
     private RhymeTrigger trigger;
+    private RhymeManager manager;
+
+    private RhymeStructure[] critStructure;
+    private RhymeStructure[] normalStructure;
+    private RhymeStructure[] badStructure;
 
     Unit enemyUnit;
     private AudioSource audioSource;
@@ -38,6 +43,7 @@ public class BattleSystem : MonoBehaviour
     private void Start()
     {
         trigger = FindObjectOfType<RhymeTrigger>();
+        manager = FindObjectOfType<RhymeManager>();
         enemySprite = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
         playerPrefab = GameObject.FindWithTag("Player").gameObject;
         enemyPrefab = GameObject.FindWithTag("Enemy").gameObject;
@@ -107,15 +113,14 @@ public class BattleSystem : MonoBehaviour
         var badRhymes = Filter(trigger, "bad");
 
         string ojbChildrenText = rhyme.GetComponentInChildren<Text>().text;
-        int indexInCrit = Array.IndexOf(critRhymes, ojbChildrenText);
-        int indexInNormal = Array.IndexOf(normalRhymes, ojbChildrenText);
-        int indexInBad = Array.IndexOf(badRhymes, ojbChildrenText);
 
-        if (indexInCrit > -1)
+        foreach (RhymeStructure rhymeStructure in critRhymes[0].structures)
         {
+            if (rhymeStructure.rhymePreview == ojbChildrenText)
+            {
             ShowHideUIInBattle();
             bool isDead = enemyUnit.TakeDamage(playerUnit.highDamage);
-            dialogueText.text = trigger.rhymes[indexInCrit].structures[indexInCrit].rhymeText;
+            dialogueText.text = rhymeStructure.rhymeText;
             yield return new WaitForSeconds(waitingTime);
             dialogueText.text = "Escaldou!";
             yield return new WaitForSeconds(waitingTime);
@@ -132,13 +137,15 @@ public class BattleSystem : MonoBehaviour
                 state = BattleState.ENEMYTURN;
                 StartCoroutine(EnemyTurn());
             }
+            }
         }
-
-        if (indexInNormal > -1)
+        foreach (RhymeStructure rhymeStructure in normalRhymes[0].structures)
         {
+             if (rhymeStructure.rhymePreview == ojbChildrenText)
+            {
             ShowHideUIInBattle();
             bool isDead = enemyUnit.TakeDamage(playerUnit.mediumDamage);
-            dialogueText.text = trigger.rhymes[indexInNormal].structures[indexInNormal].rhymeText;
+            dialogueText.text = rhymeStructure.rhymeText;
             yield return new WaitForSeconds(waitingTime);
             dialogueText.text = "Pô, deu pro gasto até";
             yield return new WaitForSeconds(waitingTime);
@@ -155,13 +162,15 @@ public class BattleSystem : MonoBehaviour
                 state = BattleState.ENEMYTURN;
                 StartCoroutine(EnemyTurn());
             }
+            }
         }
-
-        if (indexInBad > -1)
+        foreach (RhymeStructure rhymeStructure in badRhymes[0].structures)
         {
+            if (rhymeStructure.rhymePreview == ojbChildrenText)
+            {
             ShowHideUIInBattle();
             bool isDead = enemyUnit.TakeDamage(playerUnit.lowDamage);
-            dialogueText.text = trigger.rhymes[indexInBad].structures[indexInBad].rhymeText;
+            dialogueText.text = rhymeStructure.rhymeText;
             yield return new WaitForSeconds(waitingTime);
             dialogueText.text = "Pô, deu mole!";
             yield return new WaitForSeconds(waitingTime);
@@ -178,49 +187,8 @@ public class BattleSystem : MonoBehaviour
                 state = BattleState.ENEMYTURN;
                 StartCoroutine(EnemyTurn());
             }
+            }
         }
-        // if (AttackIndex == 1)
-        // {
-        //     ShowHideUIInBattle();
-
-        //     bool isDead = enemyUnit.TakeDamage(playerUnit.mediumDamage);
-        //     dialogueText.text = "Rima média";
-        //     yield return new WaitForSeconds(waitingTime);
-
-        //     enemyHUD.SetHP(enemyUnit.currentHP);
-
-        //     if (isDead)
-        //     {
-        //         state = BattleState.WON;
-        //         EndBattle();
-        //     }
-        //     else
-        //     {
-        //         state = BattleState.ENEMYTURN;
-        //         StartCoroutine(EnemyTurn());
-        //     }
-        // }
-        // if (AttackIndex == 2)
-        // {
-        //     ShowHideUIInBattle();
-
-        //     bool isDead = enemyUnit.TakeDamage(playerUnit.highDamage);
-        //     dialogueText.text = "Rima crítica";
-        //     yield return new WaitForSeconds(waitingTime);
-
-        //     enemyHUD.SetHP(enemyUnit.currentHP);
-
-        //     if (isDead)
-        //     {
-        //         state = BattleState.WON;
-        //         EndBattle();
-        //     }
-        //     else
-        //     {
-        //         state = BattleState.ENEMYTURN;
-        //         StartCoroutine(EnemyTurn());
-        //     }
-        // }
     }
     IEnumerator EnemyTurn()
     {
@@ -306,9 +274,21 @@ public class BattleSystem : MonoBehaviour
     }
     public void Rimar()
     {
+        if (currentTurn == 1)
+        {
         currentTurn++;
         PlayerCombatOptions.SetActive(true);
         PlayerActionsUI.SetActive(false);
+        trigger.TriggerRhyme();
+        }
+        else
+        {
+        currentTurn++;
+        PlayerCombatOptions.SetActive(true);
+        PlayerActionsUI.SetActive(false);
+        manager.DisplayNextSentence();
+        }
+
     }
     public void OnAttackButton(GameObject rhyme)
     {
