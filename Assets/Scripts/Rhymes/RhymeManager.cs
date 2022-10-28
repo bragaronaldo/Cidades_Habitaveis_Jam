@@ -30,14 +30,14 @@ public class RhymeManager : MonoBehaviour
         rhymesPerTurn = new List<string>();
     }
 
-    public void StartRhymes (RhymeHub[] rhyme)
+    public void StartRhymes (RhymeHub[] rhymes)
     {
         
         critRhymes.Clear();
         normalRhymes.Clear();
         badRhymes.Clear();
 
-        foreach (RhymeHub rhymeObj in rhyme)
+        foreach (RhymeHub rhymeObj in rhymes)
         {
             if (rhymeObj.type == "crit")
             {
@@ -76,6 +76,11 @@ public class RhymeManager : MonoBehaviour
         string normalRhyme2 = normalRhymes.Dequeue();
         string badRhyme = badRhymes.Dequeue();
 
+        Debug.Log("crit:" + critRhyme);
+        Debug.Log("normal:" +normalRhyme);
+        Debug.Log("normal:" +normalRhyme2);
+        Debug.Log("bad:" +badRhyme);
+
         StopAllCoroutines();
         StartCoroutine(TypeRhymes(critRhyme, normalRhyme, normalRhyme2, badRhyme));
     }
@@ -98,36 +103,17 @@ public class RhymeManager : MonoBehaviour
         rhymesPerTurn.Add(normalRhyme2);
         rhymesPerTurn.Add(badRhyme);
 
+
         foreach(string rhyme in rhymesPerTurn)
         {
-            // Debug.Log(i);
             i = Random.Range(0, rhymeOptions.Count);
             rhymeOptions[i].text = rhyme;
             rhymeOptions.RemoveAt(i);
             yield return null;
         }
 
+        rhymeOptions.Clear();
+        rhymesPerTurn.Clear();
 
-        // foreach (char letter in normalRhyme.ToCharArray())
-        // {
-        //     i = Random.Range(0, rhymeOptions.Count - 1);
-        //     rhymeOptions[i].text += letter;
-        //     rhymeOptions.RemoveAt(i);
-        //     yield return null;
-        // }
-
-        // foreach (char letter in normalRhyme2.ToCharArray())
-        // {
-        //     i = Random.Range(0, rhymeOptions.Count - 1);
-        //     rhymeOptions[i].text += letter;
-        //     rhymeOptions.RemoveAt(i);
-        //     yield return null;
-        // }
-
-        // foreach (char letter in badRhyme.ToCharArray())
-        // {
-        //     rhymeOptions[0].text += letter;
-        //     yield return null;
-        // }
     }
 }
