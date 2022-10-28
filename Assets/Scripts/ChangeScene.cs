@@ -8,6 +8,11 @@ public class ChangeScene : MonoBehaviour
 {
     public int index;
     public Animator animator;
+    private player_controller _player;
+    void Start()
+    {
+        _player = GameObject.FindWithTag("Player").GetComponent<player_controller>();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player" || index == 0)
@@ -29,6 +34,7 @@ public class ChangeScene : MonoBehaviour
         {
             // StartCoroutine(Fade(FadeDirection.Out));
             SceneManager.LoadScene("01Quarto");
+            // _player.PositionZero();
         }
         if (scene == "Creditos")
         {

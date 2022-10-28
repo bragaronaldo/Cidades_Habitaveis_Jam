@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2064379399
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: -5233588708489882991, guid: 8a782656d441fe24ab948f12db414f5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -101,7 +101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charSpeed: 9
   canva: {fileID: 0}
-  trigger: {fileID: 0}
   speed: {x: 0, y: 0}
   blockMovement: 0
   allowDialogBox: 0
@@ -114,6 +113,7 @@ MonoBehaviour:
   - {fileID: -974700236416210600, guid: 8663a60f703269e4cbbf37f76fe87b17, type: 3}
   - {fileID: -3350909813816352160, guid: 8663a60f703269e4cbbf37f76fe87b17, type: 3}
   spriteRenderer: {fileID: 9101889936792785296}
+  go: 0
 --- !u!114 &9101889936792785390
 MonoBehaviour:
   m_ObjectHideFlags: 0

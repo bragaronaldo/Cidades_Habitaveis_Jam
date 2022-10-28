@@ -25,6 +25,8 @@ public class DialogueManager : MonoBehaviour
         names = new Queue<string>();
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<player_controller>();
         animator = GameObject.FindGameObjectWithTag("Dialog_Animator").GetComponent<Animator>();
+
+        toBattle = GameObject.FindWithTag("Enemy").GetComponent<ToBattle>();
     }
 
     public void StartDialogue(Dialogue[] dialogue)
@@ -80,10 +82,14 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
     }
+    private ToBattle toBattle;
     void EndDialogue()
     {
         animator.SetBool("isOpen", false);
         _player.dialogBoxIsOpen = false;
+        if (toBattle.name == "Batata")
+        {
+            toBattle.BatataBattleScene();
+        }
     }
-
 }
