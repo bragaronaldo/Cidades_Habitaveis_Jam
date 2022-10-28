@@ -14,7 +14,6 @@ public class player_controller : MonoBehaviour
     private Animator animator;
     public Sprite[] sprites;
     public SpriteRenderer spriteRenderer;
-    public bool go;
     void Start()
     {
         speed = new Vector2(charSpeed, charSpeed);
@@ -29,16 +28,6 @@ public class player_controller : MonoBehaviour
         else
         {
             charMovement();
-        }
-        if (go)
-        {
-            var collider = GetComponent<Collider2D>();
-            collider.isTrigger = true;
-        }
-        else
-        {
-            var collider = GetComponent<Collider2D>();
-            collider.isTrigger = false;
         }
     }
 

@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/_Master/02Sala.unity
     guid: bc9481254ca8e87479cdde4c6ba0ba53
+  - enabled: 1
+    path: Assets/_Scenes/_Master/03Rua.unity
+    guid: edb9d97719ff4ce428847bbd042ba988
   m_configObjects: {}

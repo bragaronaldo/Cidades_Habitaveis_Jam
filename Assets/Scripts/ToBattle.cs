@@ -13,6 +13,7 @@ public class ToBattle : MonoBehaviour
         dialogueManager = GameObject.FindWithTag("Dialog_Manager").GetComponent<DialogueManager>();
         _boxCollider = GetComponent<BoxCollider2D>();
         _player = GameObject.FindWithTag("Player").GetComponent<player_controller>();
+        DontDestroyOnLoad(this);
     }
     // private void OnTriggerEnter2D(Collider2D other)
     // {
@@ -25,9 +26,21 @@ public class ToBattle : MonoBehaviour
         {
             // if (dialogueManager.endDialogue == true)
             // {
-                _player.blockMovement = true;
-                SceneManager.LoadScene("BattleSceneSandbox");
+
             // }
+        }
+    }
+    public void StreetScene(string name)
+    {
+        if (name == "Batata")
+        {
+            _player.blockMovement = true;
+            SceneManager.LoadScene("BattleSceneSandbox");
+        }
+        if (name == "Mae")
+        {
+            // _player.blockMovement = true;
+            SceneManager.LoadScene("03Rua");
         }
     }
 }

@@ -6,7 +6,8 @@ public class EndGame : MonoBehaviour
 {
     private GameObject _player;
     private GameObject _enemy;
-    private void Start() {
+    private void Start()
+    {
         _player = GameObject.FindWithTag("Player").gameObject;
         _enemy = GameObject.FindWithTag("Enemy").gameObject;
 

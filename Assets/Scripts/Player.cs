@@ -10,12 +10,19 @@ public class Player : MonoBehaviour
         _boxcollider = GetComponent<BoxCollider2D>();
         DontDestroyOnLoad(this);
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Enemy")
-        {
-            DontDestroyOnLoad(other);
-        }
-    }
+    // private void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     if (other.gameObject.tag == "Enemy")
+    //     {
+    //         DontDestroyOnLoad(other.gameObject);
+    //     }
+    // }
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.tag == "Enemy")
+    //     {
+    //         DontDestroyOnLoad(other);
+    //     }
+    // }
 
 }

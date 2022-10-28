@@ -28,7 +28,6 @@ public class DialogueManager : MonoBehaviour
 
         toBattle = GameObject.FindWithTag("Enemy").GetComponent<ToBattle>();
     }
-
     public void StartDialogue(Dialogue[] dialogue)
     {
         animator.SetBool("isOpen", true);
@@ -87,9 +86,8 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("isOpen", false);
         _player.dialogBoxIsOpen = false;
-        if (toBattle.name == "Batata")
-        {
-            toBattle.BatataBattleScene();
-        }
+
+        var other = GameObject.FindWithTag("Player").GetComponent<TestCollider>();
+        toBattle.StreetScene(other.collided);
     }
 }
