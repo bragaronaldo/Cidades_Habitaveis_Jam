@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
@@ -86,8 +87,11 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("isOpen", false);
         _player.dialogBoxIsOpen = false;
-
-        var other = GameObject.FindWithTag("Player").GetComponent<TestCollider>();
-        toBattle.StreetScene(other.collided);
+        Debug.Log("End Dialogue");
+        // if (SceneManager.GetActiveScene().name == "02Sala" || SceneManager.GetActiveScene().name == "03Rua")
+        // {
+            var other = GameObject.FindWithTag("Player").GetComponent<TestCollider>();
+            toBattle.StreetScene(other.collided);
+        // }
     }
 }

@@ -42,5 +42,9 @@ public class ToBattle : MonoBehaviour
             // _player.blockMovement = true;
             SceneManager.LoadScene("03Rua");
         }
+        if (name == "BatataDerrotado")
+        {
+            SceneManager.LoadScene("05ConversaCNegao");
+        }
     }
 }

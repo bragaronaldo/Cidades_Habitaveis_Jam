@@ -123,6 +123,68 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &164220405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9101889936792785386, guid: 62d00f00c0213c24780298a764b4eaf8, type: 3}
+  m_PrefabInstance: {fileID: 1767408203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &164220406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164220405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea09609b64705848bd0e9bb438550d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collided: 
+--- !u!1 &302019304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 302019305}
+  - component: {fileID: 302019306}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &302019305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302019304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &302019306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302019304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d12a849b71f3245a3b2005e1ef3a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1767408204}
 --- !u!1 &663367797 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3280592621536904992, guid: 2ea1dfa48b0ac2442a7777e3df5c3436, type: 3}
@@ -144,30 +206,27 @@ MonoBehaviour:
   - names:
     - Batata
     sentences:
-    - "Co\xE9, Gil! Firmeza, meu patr\xE3o?"
+    - "C\xEA t\xE1 afiado, hein moleque?"
   - names:
     - Gil
     sentences:
-    - "Co\xE9, Batata! Tudo beleza, irm\xE3o\r"
-    - "E o movimento a\xED, t\xE1 como?"
+    - Eu tento hehehe
   - names:
     - Batata
     sentences:
-    - "T\xE1 devagar, t\xE1 devagar\u2026"
-    - "Mas a\xED, fiquei sabendo que \xE9 seu anivers\xE1rio hoje!"
-    - "Parab\xE9ns, maninho!\r"
+    - "C\xEA vai colar na final da batalha hoje, n\xE9?"
   - names:
     - Gil
     sentences:
-    - Valeu, Batata!
+    - "\xC9 a ideia"
   - names:
     - Batata
     sentences:
-    - "E a\xED, topas uma batalhinha pra\r dar aquela animada?\r"
+    - "T\xE1 ligado que c\xEA vai batalhar com o CNeg\xE3o, n\xE9?"
   - names:
-    - Gil
+    - Batata
     sentences:
-    - "S\xF3 se for agora!"
+    - "Vixe! O CNeg\xE3o?\r"
 --- !u!4 &663367804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3280592621536905006, guid: 2ea1dfa48b0ac2442a7777e3df5c3436, type: 3}
@@ -757,10 +816,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9101889936792785386, guid: 62d00f00c0213c24780298a764b4eaf8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62d00f00c0213c24780298a764b4eaf8, type: 3}
+--- !u!114 &1767408204 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9101889936792785297, guid: 62d00f00c0213c24780298a764b4eaf8, type: 3}
+  m_PrefabInstance: {fileID: 1767408203}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164220405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97471feb081fe3f4bb12158d300ccb3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1862350062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -770,7 +840,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3280592621536904992, guid: 2ea1dfa48b0ac2442a7777e3df5c3436, type: 3}
       propertyPath: m_Name
-      value: Batata
+      value: BatataDerrotado
       objectReference: {fileID: 0}
     - target: {fileID: 3280592621536904992, guid: 2ea1dfa48b0ac2442a7777e3df5c3436, type: 3}
       propertyPath: m_IsActive

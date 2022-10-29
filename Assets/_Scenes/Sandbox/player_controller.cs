@@ -17,7 +17,10 @@ public class player_controller : MonoBehaviour
     void Start()
     {
         speed = new Vector2(charSpeed, charSpeed);
-        canva = GameObject.FindGameObjectWithTag("DialogueText").gameObject;
+        if (canva != null)
+        {
+            canva = GameObject.FindGameObjectWithTag("DialogueText").gameObject;
+        }
     }
     void Update()
     {
@@ -104,6 +107,6 @@ public class player_controller : MonoBehaviour
     }
     public void PositionZero()
     {
-        this.transform.position = new Vector3(0,0,0);
+        this.transform.position = new Vector3(0, 0, 0);
     }
 }
