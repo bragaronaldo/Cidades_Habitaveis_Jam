@@ -29,7 +29,7 @@ public class BattleSystem : MonoBehaviour
     private Text enemyNameInUI;
     private Transform enemyArea;
 
-    [SerializeField] private RhymeTrigger trigger;
+    private RhymeTrigger trigger;
     private RhymeManager manager;
 
     private RhymeStructure[] critStructure;
@@ -126,7 +126,7 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.PLAYERTURN;
         PlayerTurn();
     }
-    private float waitingTime = 2.3f;
+    private float waitingTime = 4f;
     private void ShowHideUIInBattle()
     {
         PlayerCombatOptions.SetActive(false);
@@ -218,10 +218,10 @@ public class BattleSystem : MonoBehaviour
     }
     IEnumerator EnemyTurn()
     {
+        Debug.Log("Turno do Inimigo");
         PlayerActionsUI.SetActive(false);
         _playerController.ChangeSprite(5);
         enemySprite.ChangeSprite(3);
-
 
         dialogueText.text = enemyUnit.unitName + " vai rimar!";
 
@@ -236,7 +236,6 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(5f);
 
-
         if (isDead)
         {
             state = BattleState.LOST;
@@ -250,6 +249,7 @@ public class BattleSystem : MonoBehaviour
     }
     void enemyTextAfterAttackin()
     {
+        Debug.Log("Mudança de texto");
         if (EnemyRhymes.Count == 0)
         {
             EnemyRhymes = EnemyRhymesStart;

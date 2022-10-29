@@ -275,80 +275,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79239096}
   m_CullTransparentMesh: 1
---- !u!1 &115635627
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 115635629}
-  - component: {fileID: 115635628}
-  m_Layer: 0
-  m_Name: PlayerRhymes
-  m_TagString: PlayerRhymes
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &115635628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 115635627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87819fc131164294f907f1a244b306e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rhymes:
-  - type: crit
-    structures:
-    - rhymePreview: "Rimar sobre injusti\xE7a"
-      rhymeText: "O que eu n\xE3o \xE9 com voc\xEA e meu irm\xE3o\r\nA justi\xE7a
-        \xE9 s\xF3 pros ricos\r\nE os pobres sofrer\xE3o\r"
-    - rhymePreview: "Rimar sobre injusti\xE7a"
-      rhymeText: "O que eu n\xE3o \xE9 com voc\xEA e meu irm\xE3o\r\nA justi\xE7a
-        \xE9 s\xF3 pros ricos\r\nE os pobres sofrer\xE3o\r"
-  - type: normal
-    structures:
-    - rhymePreview: "Rimar sobre anivers\xE1rio"
-      rhymeText: "Hoje \xE9 meu anivers\xE1rio\r\nmas vou te dar um presente,\r\numa
-        aula gr\xE1tis de rima\r\npra voc\xEA ficar ciente\r"
-    - rhymePreview: "Rimar sobre anivers\xE1rio"
-      rhymeText: "Hoje \xE9 meu anivers\xE1rio\r\nmas vou te dar um presente,\r\numa
-        aula gr\xE1tis de rima\r\npra voc\xEA ficar ciente\r"
-    - rhymePreview: "Rimar sobre anivers\xE1rio"
-      rhymeText: "Hoje \xE9 meu anivers\xE1rio\r\nmas vou te dar um presente,\r\numa
-        aula gr\xE1tis de rima\r\npra voc\xEA ficar ciente\r"
-    - rhymePreview: "Rimar sobre anivers\xE1rio"
-      rhymeText: "Hoje \xE9 meu anivers\xE1rio\r\nmas vou te dar um presente,\r\numa
-        aula gr\xE1tis de rima\r\npra voc\xEA ficar ciente\r"
-  - type: bad
-    structures:
-    - rhymePreview: Rimar sobre pastel de feira
-      rhymeText: "At\xE9 que t\xE1 maneiro\r\nFazer esse papel\r\nMas bateu uma fome\r\nQueria
-        um pastel\r"
-    - rhymePreview: Rimar sobre pastel de feira
-      rhymeText: "At\xE9 que t\xE1 maneiro\r\nFazer esse papel\r\nMas bateu uma fome\r\nQueria
-        um pastel\r"
---- !u!4 &115635629
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 115635627}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &121828902
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +305,7 @@ Transform:
   - {fileID: 2112726607}
   - {fileID: 1816095678}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &165379154
 GameObject:
@@ -489,7 +415,7 @@ Transform:
   m_Children:
   - {fileID: 1718855759}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &210016392
 GameObject:
@@ -738,7 +664,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   PlayerCombatOptions: {fileID: 1467724732}
-  trigger: {fileID: 0}
   songs:
   - {fileID: 8300000, guid: 9a5e97120abb4394db5e76eb14903e16, type: 3}
   - {fileID: 8300000, guid: fd2d91c2d729f864bbf6c0ad12a70168, type: 3}
@@ -1440,7 +1365,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &742707114
 GameObject:
@@ -1947,7 +1872,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 120, y: 2}
+  m_AnchoredPosition: {x: 195.5, y: 7.9}
   m_SizeDelta: {x: 107.6583, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1285358532
@@ -2148,7 +2073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6450230288251149977, guid: 69ccd6b1fc0770347a5fc3392b4bb956, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6450230288251149977, guid: 69ccd6b1fc0770347a5fc3392b4bb956, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2513,7 +2438,7 @@ Transform:
   m_Children:
   - {fileID: 1750409044}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1504549042
 GameObject:
@@ -2544,7 +2469,7 @@ Transform:
   m_Children:
   - {fileID: 411886897}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1523584441
 GameObject:
@@ -2740,7 +2665,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1541457123}
   m_CullTransparentMesh: 1
---- !u!1 &1584333722
+--- !u!1 &1601040033
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2748,46 +2673,59 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1584333725}
-  - component: {fileID: 1584333723}
+  - component: {fileID: 1601040035}
+  - component: {fileID: 1601040034}
   m_Layer: 0
-  m_Name: Rhymes
-  m_TagString: Rhymes
+  m_Name: PlayerRhymes
+  m_TagString: PlayerRhymes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1584333723
+--- !u!114 &1601040034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584333722}
+  m_GameObject: {fileID: 1601040033}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24a932efcdf00b429a2811f6f487754, type: 3}
+  m_Script: {fileID: 11500000, guid: 87819fc131164294f907f1a244b306e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTurn: 1
-  rhymingOptions:
-  - {fileID: 630103332}
-  - {fileID: 782250425}
-  - {fileID: 1535105101}
-  - {fileID: 1622351640}
---- !u!4 &1584333725
+  rhymes:
+  - type: crit
+    structures:
+    - rhymePreview: "Rimar sobre injusti\xE7a"
+      rhymeText: "O que eu n\xE3o \xE9 com voc\xEA e meu irm\xE3o\r\nA justi\xE7a
+        \xE9 s\xF3 pros ricos\r\nE os pobres sofrer\xE3o\r"
+  - type: normal
+    structures:
+    - rhymePreview: "Rimar sobre anivers\xE1rio"
+      rhymeText: "Hoje \xE9 meu anivers\xE1rio\r\nmas vou te dar um presente,\r\numa
+        aula gr\xE1tis de rima\r\npra voc\xEA ficar ciente\r"
+    - rhymePreview: "Rimar sobre anivers\xE1rio"
+      rhymeText: "Hoje \xE9 meu anivers\xE1rio\r\nmas vou te dar um presente,\r\numa
+        aula gr\xE1tis de rima\r\npra voc\xEA ficar ciente\r"
+  - type: bad
+    structures:
+    - rhymePreview: Rimar sobre pastel de feira
+      rhymeText: "At\xE9 que t\xE1 maneiro\r\nFazer esse papel\r\nMas bateu uma fome\r\nQueria
+        um pastel\r"
+--- !u!4 &1601040035
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584333722}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1601040033}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1622351639
 GameObject:
@@ -2886,7 +2824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1645216297
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3604,7 +3542,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2067866800
 GameObject:

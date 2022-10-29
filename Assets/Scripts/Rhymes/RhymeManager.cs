@@ -76,11 +76,6 @@ public class RhymeManager : MonoBehaviour
         string normalRhyme2 = normalRhymes.Dequeue();
         string badRhyme = badRhymes.Dequeue();
 
-        Debug.Log("crit:" + critRhyme);
-        Debug.Log("normal:" +normalRhyme);
-        Debug.Log("normal:" +normalRhyme2);
-        Debug.Log("bad:" +badRhyme);
-
         StopAllCoroutines();
         StartCoroutine(TypeRhymes(critRhyme, normalRhyme, normalRhyme2, badRhyme));
     }
