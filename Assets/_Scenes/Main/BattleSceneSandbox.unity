@@ -307,26 +307,34 @@ MonoBehaviour:
   rhymes:
   - type: crit
     structures:
-    - rhymePreview: Rimar bem sobre X
-      rhymeText: Rima sobre X e tal
-    - rhymePreview: Rimar bem sobre Y
-      rhymeText: Rima sobre Y e tal
+    - rhymePreview: "Rimar sobre injusti\xE7a"
+      rhymeText: "O que eu n\xE3o \xE9 com voc\xEA e meu irm\xE3o\r\nA justi\xE7a
+        \xE9 s\xF3 pros ricos\r\nE os pobres sofrer\xE3o\r"
+    - rhymePreview: "Rimar sobre injusti\xE7a"
+      rhymeText: "O que eu n\xE3o \xE9 com voc\xEA e meu irm\xE3o\r\nA justi\xE7a
+        \xE9 s\xF3 pros ricos\r\nE os pobres sofrer\xE3o\r"
   - type: normal
     structures:
-    - rhymePreview: Rimar normal sobre X
-      rhymeText: Rima sobre X e tal
-    - rhymePreview: Rimar normal sobre Y
-      rhymeText: Rima sobre Y e tal
-    - rhymePreview: Rimar normal sobre A
-      rhymeText: Rima sobre A e tal
-    - rhymePreview: Rimar normal sobre B
-      rhymeText: Rima sobre B e tal
+    - rhymePreview: "Rimar sobre anivers\xE1rio"
+      rhymeText: "Hoje \xE9 meu anivers\xE1rio\r\nmas vou te dar um presente,\r\numa
+        aula gr\xE1tis de rima\r\npra voc\xEA ficar ciente\r"
+    - rhymePreview: "Rimar sobre anivers\xE1rio"
+      rhymeText: "Hoje \xE9 meu anivers\xE1rio\r\nmas vou te dar um presente,\r\numa
+        aula gr\xE1tis de rima\r\npra voc\xEA ficar ciente\r"
+    - rhymePreview: "Rimar sobre anivers\xE1rio"
+      rhymeText: "Hoje \xE9 meu anivers\xE1rio\r\nmas vou te dar um presente,\r\numa
+        aula gr\xE1tis de rima\r\npra voc\xEA ficar ciente\r"
+    - rhymePreview: "Rimar sobre anivers\xE1rio"
+      rhymeText: "Hoje \xE9 meu anivers\xE1rio\r\nmas vou te dar um presente,\r\numa
+        aula gr\xE1tis de rima\r\npra voc\xEA ficar ciente\r"
   - type: bad
     structures:
-    - rhymePreview: Rimar mal sobre X
-      rhymeText: Rima sobre X e tal
-    - rhymePreview: Rimar mal sobre Y
-      rhymeText: Rima sobre Y e tal
+    - rhymePreview: Rimar sobre pastel de feira
+      rhymeText: "At\xE9 que t\xE1 maneiro\r\nFazer esse papel\r\nMas bateu uma fome\r\nQueria
+        um pastel\r"
+    - rhymePreview: Rimar sobre pastel de feira
+      rhymeText: "At\xE9 que t\xE1 maneiro\r\nFazer esse papel\r\nMas bateu uma fome\r\nQueria
+        um pastel\r"
 --- !u!4 &115635629
 Transform:
   m_ObjectHideFlags: 0
