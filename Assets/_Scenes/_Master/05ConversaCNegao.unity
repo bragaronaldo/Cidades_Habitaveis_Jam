@@ -547,6 +547,18 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2722070653414551238, guid: e28e2e3d73589a945bc1e73363fb4d18, type: 3}
+      propertyPath: maxHP
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722070653414551238, guid: e28e2e3d73589a945bc1e73363fb4d18, type: 3}
+      propertyPath: damage
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722070653414551238, guid: e28e2e3d73589a945bc1e73363fb4d18, type: 3}
+      propertyPath: currentHP
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 2722070653414551241, guid: e28e2e3d73589a945bc1e73363fb4d18, type: 3}
       propertyPath: m_RootOrder
       value: 3

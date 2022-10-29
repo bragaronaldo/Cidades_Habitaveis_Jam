@@ -5,6 +5,7 @@ using System;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Linq;
+
 public enum BattleState
 {
     START, PLAYERTURN, ENEMYTURN, WON, LOST
@@ -28,7 +29,7 @@ public class BattleSystem : MonoBehaviour
     private Text enemyNameInUI;
     private Transform enemyArea;
 
-    [SerializeField]private RhymeTrigger trigger;
+    [SerializeField] private RhymeTrigger trigger;
     private RhymeManager manager;
 
     private RhymeStructure[] critStructure;
@@ -40,8 +41,11 @@ public class BattleSystem : MonoBehaviour
     public AudioClip[] songs;
 
     private Enemy enemySprite;
+    [TextArea(3,10)]
+    public List<string> EnemyRhymes;
     private void Start()
     {
+        
         trigger = FindObjectOfType<RhymeTrigger>();
         manager = FindObjectOfType<RhymeManager>();
         enemySprite = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
@@ -72,6 +76,20 @@ public class BattleSystem : MonoBehaviour
 
         audioSource.clip = songs[0];
         audioSource.Play();
+
+        if (SceneManager.GetActiveScene().name == "06BatalhaCNegao")
+        {
+            audioSource.clip = songs[3];
+            audioSource.Play();
+        }
+    }
+    private bool changedSong = false;
+    void Update()
+    {
+        if (changedSong == false)
+        {
+            changeSongWeakEnemy();
+        }
     }
 
     IEnumerator SetupBattle()
@@ -210,7 +228,7 @@ public class BattleSystem : MonoBehaviour
 
         enemyTextAfterAttackin();
 
-        yield return new WaitForSeconds(2.2f);
+        yield return new WaitForSeconds(5f);
 
 
         if (isDead)
@@ -226,7 +244,8 @@ public class BattleSystem : MonoBehaviour
     }
     void enemyTextAfterAttackin()
     {
-        dialogueText.text = "Perdeu moral!";
+        var i = UnityEngine.Random.Range(0, EnemyRhymes.Count);
+        dialogueText.text = EnemyRhymes[i];
     }
     // Esvaziar a barra de vida
     private Image enemyFill;
@@ -238,6 +257,14 @@ public class BattleSystem : MonoBehaviour
             enemyFill.color = new Color32(0, 0, 0, 255);
 
             if (enemyPrefab.name == "Batata")
+            {
+                dialogueText.text = "Você ganhou a batalha!";
+                audioSource.clip = songs[1];
+                audioSource.loop = false;
+                audioSource.Play();
+                StartCoroutine(EndGame());
+            }
+            if (enemyPrefab.name == "CNegao")
             {
                 dialogueText.text = "Você ganhou a batalha!";
                 audioSource.clip = songs[1];
@@ -273,6 +300,11 @@ public class BattleSystem : MonoBehaviour
             {
                 yield return new WaitForSeconds(songs[1].length + 0.4f);
                 SceneManager.LoadScene("04BatataDepoisDaBatalha");
+            }
+            if (enemyPrefab.name == "CNegao")
+            {
+                yield return new WaitForSeconds(songs[1].length + 0.4f);
+                SceneManager.LoadScene("07CNegaoDepoisDaBatalha");
             }
         }
     }
@@ -313,5 +345,17 @@ public class BattleSystem : MonoBehaviour
     public RhymeHub[] Filter(RhymeTrigger input, string rhymeType)
     {
         return input.rhymes.Where(c => c.type == rhymeType).ToArray();
+    }
+    private void changeSongWeakEnemy()
+    {
+        if (SceneManager.GetActiveScene().name == "06BatalhaCNegao")
+        {
+            if (enemyUnit.currentHP < enemyUnit.maxHP / 3)
+            {
+                audioSource.clip = songs[4];
+                audioSource.Play();
+                changedSong = true;
+            }
+        }
     }
 }
