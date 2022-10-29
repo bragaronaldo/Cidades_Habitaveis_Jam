@@ -7,11 +7,9 @@ public class player_controller : MonoBehaviour
     public float charSpeed;
     public GameObject canva;
     private DialogueTrigger trigger;
-
     public Vector2 speed;
     public bool blockMovement = false;
     public bool allowDialogBox = false;
-
     public bool dialogBoxIsOpen = false;
     private Animator animator;
     public Sprite[] sprites;
@@ -19,7 +17,10 @@ public class player_controller : MonoBehaviour
     void Start()
     {
         speed = new Vector2(charSpeed, charSpeed);
-        canva = GameObject.FindGameObjectWithTag("DialogueText").gameObject;
+        if (canva != null)
+        {
+            canva = GameObject.FindGameObjectWithTag("DialogueText").gameObject;
+        }
     }
     void Update()
     {
@@ -74,8 +75,6 @@ public class player_controller : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                trigger = GameObject.FindWithTag("Dialogue_Trigger").GetComponent<DialogueTrigger>();
-
                 trigger.TriggerDialogue();
                 dialogBoxIsOpen = true;
             }
@@ -83,6 +82,8 @@ public class player_controller : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
+        trigger = other.gameObject.GetComponent<DialogueTrigger>();
+
         animator = GameObject.FindGameObjectWithTag("Interaction_Animator").GetComponent<Animator>();
         animator.SetBool("interactionOpen", true);
         speed = new Vector2(0, 0);
@@ -103,5 +104,9 @@ public class player_controller : MonoBehaviour
         speed = new Vector2(10, 10);
 
         charMovement();
+    }
+    public void PositionZero()
+    {
+        this.transform.position = new Vector3(0, 0, 0);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
@@ -25,8 +26,9 @@ public class DialogueManager : MonoBehaviour
         names = new Queue<string>();
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<player_controller>();
         animator = GameObject.FindGameObjectWithTag("Dialog_Animator").GetComponent<Animator>();
-    }
 
+        toBattle = GameObject.FindWithTag("Enemy").GetComponent<ToBattle>();
+    }
     public void StartDialogue(Dialogue[] dialogue)
     {
         animator.SetBool("isOpen", true);
@@ -80,10 +82,16 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
     }
+    private ToBattle toBattle;
     void EndDialogue()
     {
         animator.SetBool("isOpen", false);
         _player.dialogBoxIsOpen = false;
+        Debug.Log("End Dialogue");
+        // if (SceneManager.GetActiveScene().name == "02Sala" || SceneManager.GetActiveScene().name == "03Rua")
+        // {
+            var other = GameObject.FindWithTag("Player").GetComponent<TestCollider>();
+            toBattle.StreetScene(other.collided);
+        // }
     }
-
 }
