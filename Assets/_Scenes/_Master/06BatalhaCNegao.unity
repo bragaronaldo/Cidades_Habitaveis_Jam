@@ -2228,14 +2228,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   PlayerCombatOptions: {fileID: 1945938137}
-  trigger: {fileID: 0}
   songs:
   - {fileID: 8300000, guid: 9a5e97120abb4394db5e76eb14903e16, type: 3}
   - {fileID: 8300000, guid: fd2d91c2d729f864bbf6c0ad12a70168, type: 3}
   - {fileID: 8300000, guid: afe37c7b9b22ce44da15f4b252e4a02b, type: 3}
   - {fileID: 8300000, guid: cdcc9734e92d9554989260fc24bcb9d6, type: 3}
   - {fileID: 8300000, guid: 434e8f099b15f664a874f6e1901e6d95, type: 3}
-  EnemyRhymes: []
+  EnemyRhymes:
+  - "Gilzinho meu querido\r\nVoc\xEA at\xE9 que desenrola\r\nMas eu sou o preferido\r\nVai
+    ter que voltar pra escola\r"
+  - "Sou antigo e vaidoso \r\nPorque lutei pelo meu povo \r\nse tu faz rima hoje
+    \r\n\xE9 porque l\xE1 atr\xE1s foi fogo\r"
+  - "Pode tentar o que for\r\nTodo mundo me conhece\r\nVoc\xEA \xE9 novo pra por\r\nO
+    seu nome numa prece\r"
+  - "No meio do mato\r\nN\xE3o tem brincadeira\r\nComida no prato\r\n\xC9 melhor
+    do que besteira\r"
+  - "de acordo com minha conta\r\nessa batalha nem vale \r\ngaroto novo \r\nde nada
+    sabe\r"
+  - "O palitinho faz a pose\r\nVoc\xEA tem que entender\r\nN\xE3o t\xF4 aqui pra
+    brincadeira\r\nQuem ganhar vai receber\r"
+  - "Minha rima \xE9 de outro planeta \r\ne antes mesmo que eu me esque\xE7a\r\nela
+    faz fritar deserto\r\ne faz derreter geleira\r"
+  - "Fala como soubesse o caminho\r\nagora entendo os menorzinho\r\npra chamar aten\xE7\xE3o
+    fala besteira \r\nvou te dar picolezinho\r"
 --- !u!4 &1106369883
 Transform:
   m_ObjectHideFlags: 0
