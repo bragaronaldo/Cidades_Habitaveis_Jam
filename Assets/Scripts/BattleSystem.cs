@@ -41,10 +41,16 @@ public class BattleSystem : MonoBehaviour
     public AudioClip[] songs;
 
     private Enemy enemySprite;
-    [TextArea(3,10)]
+    [TextArea(3, 10)]
     public List<string> EnemyRhymes;
+    private List<string> EnemyRhymesStart;
     private void Start()
     {
+        EnemyRhymesStart = new List<string>();
+        foreach (string rhyme in EnemyRhymes)
+        {
+            EnemyRhymesStart.Add(rhyme);
+        }
         
         trigger = FindObjectOfType<RhymeTrigger>();
         manager = FindObjectOfType<RhymeManager>();
@@ -244,8 +250,14 @@ public class BattleSystem : MonoBehaviour
     }
     void enemyTextAfterAttackin()
     {
-        var i = UnityEngine.Random.Range(0, EnemyRhymes.Count);
+        if (EnemyRhymes.Count == 0)
+        {
+            EnemyRhymes = EnemyRhymesStart;
+        }
+        int i = UnityEngine.Random.Range(0, EnemyRhymes.Count);
         dialogueText.text = EnemyRhymes[i];
+        EnemyRhymes.RemoveAt(i);
+
     }
     // Esvaziar a barra de vida
     private Image enemyFill;
@@ -272,9 +284,6 @@ public class BattleSystem : MonoBehaviour
                 audioSource.Play();
                 StartCoroutine(EndGame());
             }
-
-
-
         }
         else if (state == BattleState.LOST)
         {
