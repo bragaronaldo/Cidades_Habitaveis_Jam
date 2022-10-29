@@ -87,7 +87,8 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("isOpen", false);
         _player.dialogBoxIsOpen = false;
-        Debug.Log("End Dialogue");
+        _player.allowDialogBox = false;
+        // Debug.Log("End Dialogue");
         // if (SceneManager.GetActiveScene().name == "02Sala" || SceneManager.GetActiveScene().name == "03Rua")
         // {
             var other = GameObject.FindWithTag("Player").GetComponent<TestCollider>();

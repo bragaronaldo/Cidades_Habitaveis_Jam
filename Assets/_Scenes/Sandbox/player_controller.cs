@@ -83,9 +83,9 @@ public class player_controller : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         trigger = other.gameObject.GetComponent<DialogueTrigger>();
-
         animator = GameObject.FindGameObjectWithTag("Interaction_Animator").GetComponent<Animator>();
         animator.SetBool("interactionOpen", true);
+
         speed = new Vector2(0, 0);
         allowDialogBox = true;
         StartCoroutine(charMoveReset());

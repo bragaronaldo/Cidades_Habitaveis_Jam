@@ -46,5 +46,9 @@ public class ToBattle : MonoBehaviour
         {
             SceneManager.LoadScene("05ConversaCNegao");
         }
+        if (name == "CNegao")
+        {
+            SceneManager.LoadScene("06BatalhaCNegao");
+        }
     }
 }

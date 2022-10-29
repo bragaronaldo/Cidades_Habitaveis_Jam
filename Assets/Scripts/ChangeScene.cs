@@ -11,7 +11,10 @@ public class ChangeScene : MonoBehaviour
     private player_controller _player;
     void Start()
     {
-        _player = GameObject.FindWithTag("Player").GetComponent<player_controller>();
+        if (_player != null)
+        {
+            _player = GameObject.FindWithTag("Player").GetComponent<player_controller>();
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
