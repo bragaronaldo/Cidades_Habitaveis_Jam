@@ -1907,26 +1907,34 @@ MonoBehaviour:
   rhymes:
   - type: crit
     structures:
-    - rhymePreview: Rimar bem sobre X
-      rhymeText: Rima sobre X e tal
-    - rhymePreview: Rimar bem sobre Y
-      rhymeText: Rima sobre Y e tal
+    - rhymePreview: Vou te ensinar
+      rhymeText: "Se liga aqui com o pai\r\nQue eu vou te ensinar\r\nMas v\xEA se
+        n\xE3o sai\r\nSen\xE3o vai ter que largar\r"
+    - rhymePreview: "Zoar o pirulito do CNeg\xE3o"
+      rhymeText: "Paga de sinistro\r\nMas n\xE3o tem maturidade\r\nPirulitinho na
+        boca\r\nJ\xE1 n\xE3o \xE9 pra sua idade\r"
   - type: normal
     structures:
-    - rhymePreview: Rimar normal sobre X
-      rhymeText: Rima sobre X e tal
-    - rhymePreview: Rimar normal sobre Y
-      rhymeText: Rima sobre Y e tal
-    - rhymePreview: Rimar normal sobre A
-      rhymeText: Rima sobre A e tal
-    - rhymePreview: Rimar normal sobre B
-      rhymeText: Rima sobre B e tal
+    - rhymePreview: Rimar sobre suas habilidades
+      rhymeText: "CNeg\xE3o na rima \xE9 igual novinho\r\nenquanto Gil na rima \xE9
+        Ronaldinho\r\nhabilidoso no microfone\r\nGil dribla o mal caminho\r"
+    - rhymePreview: "CNeg\xE3o \xE9 velho"
+      rhymeText: "Cnegao \xE9 antigo \r\nmas tem muita vaidade \r\nGil \xE9 o novo
+        rapper \r\nmostrando a habilidade\r"
+    - rhymePreview: "CNeg\xE3o n\xE3o tem experi\xEAncia de rua"
+      rhymeText: "Do que adianta estar a muito tempo\r\ne ainda sim n\xE3o fazer
+        nada\r\nCNeg\xE3o \xE9 dinossauro \r\nt\xE1 extinto na pedrada\r"
+    - rhymePreview: "CNeg\xE3o come mato"
+      rhymeText: "CNeg\xE3o ignorante \r\nnessa rima eu esculacho \r\nparecendo at\xE9
+        um burro \r\nrecomendo comer mato\r"
   - type: bad
     structures:
-    - rhymePreview: Rimar mal sobre X
-      rhymeText: Rima sobre X e tal
-    - rhymePreview: Rimar mal sobre Y
-      rhymeText: Rima sobre Y e tal
+    - rhymePreview: Maior camelo do mundo
+      rhymeText: "Co\xE9 CNeg\xE3o\r\nVai ali tomar uma \xE1gua\r\nO maior camelo
+        do mundo\r\nTamb\xE9m merece uma pausa\r"
+    - rhymePreview: "O pior sabor de picol\xE9"
+      rhymeText: "CNeg\xE3o s\xF3 bate o p\xE9\r\nMas t\xE1 aqui na minha m\xE3o\r\nComo
+        o pior sabor de picol\xE9\r\nRima como se chupasse um lim\xE3o\r"
 --- !u!4 &963961071
 Transform:
   m_ObjectHideFlags: 0
