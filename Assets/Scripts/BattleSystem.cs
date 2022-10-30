@@ -150,7 +150,7 @@ public class BattleSystem : MonoBehaviour
                 dialogueText.text = rhymeStructure.rhymeText;
                 yield return new WaitForSeconds(waitingTime);
                 dialogueText.text = "Escaldou!";
-                yield return new WaitForSeconds(waitingTime);
+                yield return new WaitForSeconds(waitingTime / 2);
 
                 enemyHUD.SetHP(enemyUnit.currentHP);
 
@@ -175,7 +175,7 @@ public class BattleSystem : MonoBehaviour
                 dialogueText.text = rhymeStructure.rhymeText;
                 yield return new WaitForSeconds(waitingTime);
                 dialogueText.text = "Pô, deu pro gasto até";
-                yield return new WaitForSeconds(waitingTime);
+                yield return new WaitForSeconds(waitingTime / 2);
 
                 enemyHUD.SetHP(enemyUnit.currentHP);
 
@@ -200,7 +200,7 @@ public class BattleSystem : MonoBehaviour
                 dialogueText.text = rhymeStructure.rhymeText;
                 yield return new WaitForSeconds(waitingTime);
                 dialogueText.text = "Pô, deu mole!";
-                yield return new WaitForSeconds(waitingTime);
+                yield return new WaitForSeconds(waitingTime / 2);
 
                 enemyHUD.SetHP(enemyUnit.currentHP);
 
@@ -281,6 +281,7 @@ public class BattleSystem : MonoBehaviour
             }
             if (enemyPrefab.name == "CNegao")
             {
+                Debug.Log("Batalha vencida contra o " + enemyPrefab.name);
                 dialogueText.text = "Você ganhou a batalha!";
                 audioSource.clip = songs[1];
                 audioSource.loop = false;
@@ -328,7 +329,7 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.LOST)
         {
             yield return new WaitForSeconds(songs[2].length + 0.2f);
-            SceneManager.LoadScene("EndGame");
+            SceneManager.LoadScene("10Creditos");
         }
         if (state == BattleState.WON)
         {
@@ -346,7 +347,7 @@ public class BattleSystem : MonoBehaviour
             if (enemyPrefab.name == "CNegao")
             {
                 yield return new WaitForSeconds(songs[1].length + 0.4f);
-                SceneManager.LoadScene("06BatalhaCNegao");
+                SceneManager.LoadScene("10Creditos");
             }
         }
     }
