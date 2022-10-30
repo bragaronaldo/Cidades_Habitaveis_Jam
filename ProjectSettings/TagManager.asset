@@ -28,6 +28,7 @@ TagManager:
   - Continue_Button
   - Dialog_Manager
   - Dialogue_Trigger
+  - InteractionBox
   layers:
   - Default
   - TransparentFX

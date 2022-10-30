@@ -37,17 +37,18 @@ public class ToBattle : MonoBehaviour
             _player.blockMovement = true;
             SceneManager.LoadScene("BattleSceneSandbox");
         }
-        if (name == "Mae")
-        {
-            // _player.blockMovement = true;
-            SceneManager.LoadScene("03Rua");
-        }
+        // if (name == "Mae")
+        // {
+        //     // _player.blockMovement = true;
+        //     SceneManager.LoadScene("03Rua");
+        // }
         if (name == "BatataDerrotado")
         {
             SceneManager.LoadScene("05ConversaCNegao");
         }
         if (name == "CNegao")
         {
+            
             SceneManager.LoadScene("06BatalhaCNegao");
         }
     }

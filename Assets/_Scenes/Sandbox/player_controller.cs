@@ -71,7 +71,7 @@ public class player_controller : MonoBehaviour
     }
     private void showDialogueBox()
     {
-        if (allowDialogBox == true)
+         if (allowDialogBox == true)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {

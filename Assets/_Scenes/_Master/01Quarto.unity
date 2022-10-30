@@ -1051,7 +1051,7 @@ GameObject:
   - component: {fileID: 1213482188}
   m_Layer: 5
   m_Name: Interaction_Box
-  m_TagString: Untagged
+  m_TagString: InteractionBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1065,7 +1065,7 @@ RectTransform:
   m_GameObject: {fileID: 1213482186}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.11430001, y: 0.0572, z: 0}
+  m_LocalScale: {x: 0.08, y: 0.03, z: 0}
   m_Children:
   - {fileID: 1469893319}
   m_Father: {fileID: 2026679510}
@@ -1073,7 +1073,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 39}
+  m_AnchoredPosition: {x: 0, y: 36.6}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1213482188
@@ -2383,5 +2383,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9101889936792785390, guid: 62d00f00c0213c24780298a764b4eaf8, type: 3}
+      propertyPath: iBox
+      value: 
+      objectReference: {fileID: 1213482186}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62d00f00c0213c24780298a764b4eaf8, type: 3}

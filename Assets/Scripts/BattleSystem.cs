@@ -52,6 +52,7 @@ public class BattleSystem : MonoBehaviour
             EnemyRhymesStart.Add(rhyme);
         }
         
+
         trigger = FindObjectOfType<RhymeTrigger>();
         manager = FindObjectOfType<RhymeManager>();
         enemySprite = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
@@ -101,7 +102,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator SetupBattle()
     {
         _playerController.ChangeSprite(5);
-
+        _playerController.transform.localScale = new Vector3(0.1f,0.1f, 0.1f);
         enemySprite.ChangeSprite(2);
         // GameObject player = Instantiate(playerPrefab, playerArea);
         GameObject player = playerPrefab;
@@ -274,7 +275,9 @@ public class BattleSystem : MonoBehaviour
                 audioSource.clip = songs[1];
                 audioSource.loop = false;
                 audioSource.Play();
-                StartCoroutine(EndGame());
+
+                StartCoroutine(FinalText());
+
             }
             if (enemyPrefab.name == "CNegao")
             {
@@ -296,6 +299,30 @@ public class BattleSystem : MonoBehaviour
             StartCoroutine(EndGame());
         }
     }
+    IEnumerator FinalText()
+    {
+        float waiting = 3f;
+
+        dialogueText.text = "BATATA - Cê tá afiado, hein moleque?";
+        yield return new WaitForSeconds(waiting);
+        dialogueText.text = "GIL - Eu tento hehehe";
+        yield return new WaitForSeconds(waiting);
+
+        dialogueText.text = "BATATA - Cê vai colar na final da batalha hoje, né?";
+        yield return new WaitForSeconds(waiting);
+
+        dialogueText.text = "GIL - É a ideia";
+        yield return new WaitForSeconds(waiting);
+
+        dialogueText.text = "BATATA - Tá ligado que cê vai batalhar com o CNegão, né?";
+        yield return new WaitForSeconds(waiting);
+
+        dialogueText.text = "Vixe! O CNegão?";
+        yield return new WaitForSeconds(0.7f);
+
+        StartCoroutine(EndGame());
+
+    }
     IEnumerator EndGame()
     {
         if (state == BattleState.LOST)
@@ -307,13 +334,19 @@ public class BattleSystem : MonoBehaviour
         {
             if (enemyPrefab.name == "Batata")
             {
-                yield return new WaitForSeconds(songs[1].length + 0.4f);
-                SceneManager.LoadScene("04BatataDepoisDaBatalha");
+                // yield return new WaitForSeconds(songs[1].length + 0.4f);
+                // SceneManager.LoadScene("04BatataDepoisDaBatalha");
+
+                // yield return new WaitForSeconds(songs[1].length + 0.4f);
+                // SceneManager.LoadScene("05ConversaCNegao");
+
+                 yield return new WaitForSeconds(songs[1].length + 0.4f);
+                SceneManager.LoadScene("05ConversaCNegao");
             }
             if (enemyPrefab.name == "CNegao")
             {
                 yield return new WaitForSeconds(songs[1].length + 0.4f);
-                SceneManager.LoadScene("07CNegaoDepoisDaBatalha");
+                SceneManager.LoadScene("06BatalhaCNegao");
             }
         }
     }

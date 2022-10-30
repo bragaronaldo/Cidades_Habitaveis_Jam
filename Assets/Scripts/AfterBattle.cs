@@ -29,6 +29,11 @@ public class AfterBattle : MonoBehaviour
             _audioSource.clip = _audioManager.songs[0];
             _audioSource.Play();
         }
+        if (SceneManager.GetActiveScene().name == "05ConversaCNegao")
+        {
+            _audioSource.clip = _audioManager.songs[0];
+            _audioSource.Play();
+        }
         // _player = GameObject.FindWithTag("Player").GetComponent<player_controller>();
         // _player.dialogBoxIsOpen = true;
     }
