@@ -23,6 +23,11 @@ public class ChangeScene : MonoBehaviour
             SceneManager.LoadScene("02Sala");
             // StartCoroutine(transition());
         }
+        if (SceneManager.GetActiveScene().name == "02Sala")
+        {
+            SceneManager.LoadScene("03Rua");
+            // StartCoroutine(transition());
+        }
     }
     IEnumerator transition()
     {
