@@ -2698,7 +2698,7 @@ MonoBehaviour:
   - type: crit
     structures:
     - rhymePreview: "Rimar sobre injusti\xE7a"
-      rhymeText: "O que eu n\xE3o \xE9 com voc\xEA e meu irm\xE3o\r\nA justi\xE7a
+      rhymeText: "-O que eu n\xE3o entendo\n-\xE9 com voc\xEA e meu irm\xE3o\nA justi\xE7a
         \xE9 s\xF3 pros ricos\r\nE os pobres sofrer\xE3o\r"
   - type: normal
     structures:

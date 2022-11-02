@@ -35,12 +35,10 @@ public class BattleSystem : MonoBehaviour
     private RhymeStructure[] critStructure;
     private RhymeStructure[] normalStructure;
     private RhymeStructure[] badStructure;
-
     Unit enemyUnit;
     private AudioSource audioSource;
     public AudioClip[] songs;
-
-    private Enemy enemySprite;
+     private Enemy enemySprite;
     [TextArea(3, 10)]
     public List<string> EnemyRhymes;
     private List<string> EnemyRhymesStart;
@@ -51,7 +49,6 @@ public class BattleSystem : MonoBehaviour
         {
             EnemyRhymesStart.Add(rhyme);
         }
-        
 
         trigger = FindObjectOfType<RhymeTrigger>();
         manager = FindObjectOfType<RhymeManager>();
@@ -102,7 +99,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator SetupBattle()
     {
         _playerController.ChangeSprite(5);
-        _playerController.transform.localScale = new Vector3(0.1f,0.1f, 0.1f);
+        _playerController.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         enemySprite.ChangeSprite(2);
         // GameObject player = Instantiate(playerPrefab, playerArea);
         GameObject player = playerPrefab;
@@ -127,7 +124,7 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.PLAYERTURN;
         PlayerTurn();
     }
-    private float waitingTime = 4f;
+    private float waitingTime = 6.2f;
     private void ShowHideUIInBattle()
     {
         PlayerCombatOptions.SetActive(false);
@@ -150,7 +147,7 @@ public class BattleSystem : MonoBehaviour
                 dialogueText.text = rhymeStructure.rhymeText;
                 yield return new WaitForSeconds(waitingTime);
                 dialogueText.text = "Escaldou!";
-                yield return new WaitForSeconds(waitingTime / 2);
+                yield return new WaitForSeconds(waitingTime / 3);
 
                 enemyHUD.SetHP(enemyUnit.currentHP);
 
@@ -175,7 +172,7 @@ public class BattleSystem : MonoBehaviour
                 dialogueText.text = rhymeStructure.rhymeText;
                 yield return new WaitForSeconds(waitingTime);
                 dialogueText.text = "Pô, deu pro gasto até";
-                yield return new WaitForSeconds(waitingTime / 2);
+                yield return new WaitForSeconds(waitingTime / 3);
 
                 enemyHUD.SetHP(enemyUnit.currentHP);
 
@@ -200,7 +197,7 @@ public class BattleSystem : MonoBehaviour
                 dialogueText.text = rhymeStructure.rhymeText;
                 yield return new WaitForSeconds(waitingTime);
                 dialogueText.text = "Pô, deu mole!";
-                yield return new WaitForSeconds(waitingTime / 2);
+                yield return new WaitForSeconds(waitingTime / 3);
 
                 enemyHUD.SetHP(enemyUnit.currentHP);
 
@@ -226,17 +223,14 @@ public class BattleSystem : MonoBehaviour
 
         dialogueText.text = enemyUnit.unitName + " vai rimar!";
 
-        yield return new WaitForSeconds(1f);
-
-        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
-
-        playerHUD.SetHP(playerUnit.currentHP);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         enemyTextAfterAttackin();
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(waitingTime);
 
+        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+        playerHUD.SetHP(playerUnit.currentHP);
         if (isDead)
         {
             state = BattleState.LOST;
@@ -302,7 +296,7 @@ public class BattleSystem : MonoBehaviour
     }
     IEnumerator FinalText()
     {
-        float waiting = 3f;
+        float waiting = 3.6f;
 
         dialogueText.text = "BATATA - Cê tá afiado, hein moleque?";
         yield return new WaitForSeconds(waiting);
@@ -319,7 +313,7 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(waiting);
 
         dialogueText.text = "Vixe! O CNegão?";
-        yield return new WaitForSeconds(0.7f);
+        // yield return new WaitForSeconds(0.2f);
 
         StartCoroutine(EndGame());
 
@@ -341,7 +335,7 @@ public class BattleSystem : MonoBehaviour
                 // yield return new WaitForSeconds(songs[1].length + 0.4f);
                 // SceneManager.LoadScene("05ConversaCNegao");
 
-                 yield return new WaitForSeconds(songs[1].length + 0.4f);
+                yield return new WaitForSeconds(songs[1].length + 0.4f);
                 SceneManager.LoadScene("05ConversaCNegao");
             }
             if (enemyPrefab.name == "CNegao")

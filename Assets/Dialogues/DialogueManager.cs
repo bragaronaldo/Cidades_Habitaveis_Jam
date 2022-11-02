@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
@@ -18,7 +16,6 @@ public class DialogueManager : MonoBehaviour
     {
         nameText = GameObject.FindGameObjectWithTag("Dialog_Name").GetComponent<TextMeshProUGUI>();
         dialogueText = GameObject.FindGameObjectWithTag("Dialog_Conversation").GetComponent<TextMeshProUGUI>();
-
     }
     void Start()
     {
@@ -32,7 +29,6 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue[] dialogue)
     {
         animator.SetBool("isOpen", true);
-
 
         sentences.Clear();
         names.Clear();
