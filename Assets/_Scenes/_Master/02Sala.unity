@@ -1127,6 +1127,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2409417936433384077, guid: 8d6b6538451557e4da0caaa7f50f1231, type: 3}
+      propertyPath: m_FirstSelected
+      value: 
+      objectReference: {fileID: 1517271725}
     - target: {fileID: 2409417936433384079, guid: 8d6b6538451557e4da0caaa7f50f1231, type: 3}
       propertyPath: m_Name
       value: EventSystem
@@ -2086,6 +2090,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue_Box
       objectReference: {fileID: 0}
+    - target: {fileID: 1280089004634822856, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1280089004634822964, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2192,6 +2200,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+--- !u!1 &1517271725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1280089004487495375, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+  m_PrefabInstance: {fileID: 1517271724}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1593859054
 GameObject:
   m_ObjectHideFlags: 0

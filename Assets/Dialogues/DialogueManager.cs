@@ -24,6 +24,7 @@ public class DialogueManager : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<player_controller>();
         animator = GameObject.FindGameObjectWithTag("Dialog_Animator").GetComponent<Animator>();
 
+
         toBattle = GameObject.FindWithTag("Enemy").GetComponent<ToBattle>();
     }
     public void StartDialogue(Dialogue[] dialogue)
@@ -87,8 +88,8 @@ public class DialogueManager : MonoBehaviour
         // Debug.Log("End Dialogue");
         // if (SceneManager.GetActiveScene().name == "02Sala" || SceneManager.GetActiveScene().name == "03Rua")
         // {
-            var other = GameObject.FindWithTag("Player").GetComponent<TestCollider>();
-            toBattle.StreetScene(other.collided);
+        var other = GameObject.FindWithTag("Player").GetComponent<TestCollider>();
+        toBattle.StreetScene(other.collided);
         // }
     }
 }

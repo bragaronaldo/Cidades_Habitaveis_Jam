@@ -42,6 +42,8 @@ public class BattleSystem : MonoBehaviour
     [TextArea(3, 10)]
     public List<string> EnemyRhymes;
     private List<string> EnemyRhymesStart;
+
+    public ControllerManager controllerManager;
     private void Start()
     {
         EnemyRhymesStart = new List<string>();
@@ -316,7 +318,6 @@ public class BattleSystem : MonoBehaviour
         // yield return new WaitForSeconds(0.2f);
 
         StartCoroutine(EndGame());
-
     }
     IEnumerator EndGame()
     {
@@ -355,6 +356,7 @@ public class BattleSystem : MonoBehaviour
     }
     public void Rimar()
     {
+
         if (currentTurn == 1)
         {
             currentTurn++;

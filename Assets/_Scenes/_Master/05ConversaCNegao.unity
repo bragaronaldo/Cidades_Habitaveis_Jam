@@ -734,6 +734,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2409417936433384077, guid: 8d6b6538451557e4da0caaa7f50f1231, type: 3}
+      propertyPath: m_FirstSelected
+      value: 
+      objectReference: {fileID: 1626073573}
     - target: {fileID: 2409417936433384079, guid: 8d6b6538451557e4da0caaa7f50f1231, type: 3}
       propertyPath: m_Name
       value: EventSystem
@@ -1261,6 +1265,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1280089004634822964, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
   m_PrefabInstance: {fileID: 1626073571}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1626073573 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1280089004487495375, guid: 2cad4b507634f8a4ba580f99c867bc92, type: 3}
+  m_PrefabInstance: {fileID: 1626073571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1649964673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1271,6 +1280,10 @@ PrefabInstance:
     - target: {fileID: 56478544, guid: 62d00f00c0213c24780298a764b4eaf8, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213482186, guid: 62d00f00c0213c24780298a764b4eaf8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9101889936792785299, guid: 62d00f00c0213c24780298a764b4eaf8, type: 3}
       propertyPath: m_RootOrder
@@ -1463,7 +1476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1906651918
 MonoBehaviour:
   m_ObjectHideFlags: 0

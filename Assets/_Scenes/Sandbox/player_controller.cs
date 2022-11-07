@@ -89,7 +89,7 @@ public class player_controller : MonoBehaviour
     {
         if (allowDialogBox == true)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) || (Input.GetKeyDown(KeyCode.Joystick1Button0)))
             {
                 trigger.TriggerDialogue();
                 dialogBoxIsOpen = true;
